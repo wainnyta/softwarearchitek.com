@@ -64,8 +64,7 @@ export default function Home() {
   )
 }
 
-export const getStaticProps = async (ctx) => {
-
+export const getServerSideProps = async (ctx) => {
   return {
     redirect: {
       destination: 'https://github.com/meerbahadin',
