@@ -94,7 +94,7 @@ export default function Home() {
                   </ButtonGroup>
                 </LightMode>
               </Box>
-              <Divider my={10} />
+              <Divider my={10}  />
             </Box>
           </SlideFade>
           <SlideFade in={true} offsetY={80} delay={0.2}>
@@ -122,6 +122,7 @@ export default function Home() {
               <Box
                 w="100%"
                 p={4}
+                borderColor="gray.700"
                 borderRadius={5}
                 borderWidth="1px"
                 transition=".5s"
@@ -149,10 +150,11 @@ export default function Home() {
               <Box
                 w="100%"
                 p={4}
+                borderColor="gray.700"
+                borderColor="gray.700"
                 borderRadius={5}
                 borderWidth="1px"
                 transition=".5s"
-                colorScheme="ghost"
                 d="flex"
                 _hover={{
                   borderColor: 'green.300',
@@ -177,11 +179,11 @@ export default function Home() {
               <Box
                 w="100%"
                 p={4}
+                borderColor="gray.700"
                 borderRadius={5}
                 borderWidth="1px"
                 transition=".5s"
                 d="flex"
-                colorScheme="ghost"
                 _hover={{
                   borderColor: 'green.300',
                 }}
@@ -205,12 +207,12 @@ export default function Home() {
               <Box
                 w="100%"
                 p={4}
+                borderColor="gray.700"
                 borderRadius={5}
                 borderWidth="1px"
                 transition=".5s"
                 d="flex"
                 role="group"
-                colorScheme="ghost"
                 _hover={{
                   borderColor: 'green.300',
                 }}
@@ -235,10 +237,10 @@ export default function Home() {
               <Box
                 w="100%"
                 p={4}
+                borderColor="gray.700"
                 borderRadius={5}
                 borderWidth="1px"
                 transition=".5s"
-                colorScheme="ghost"
                 d="flex"
                 _hover={{
                   borderColor: 'green.300',
@@ -264,10 +266,10 @@ export default function Home() {
               <Box
                 w="100%"
                 p={4}
+                borderColor="gray.700"
                 borderRadius={5}
                 borderWidth="1px"
                 transition=".5s"
-                colorScheme="ghost"
                 d="flex"
                 _hover={{
                   borderColor: 'green.300',
