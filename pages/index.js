@@ -142,7 +142,7 @@ export default function Home() {
                     NodeJs
                   </Heading>
                   <Paragraph mt={1} fontSize="sm">
-                    Chrome's V8 JavaScript engine for server-side.
+                    Chrome's V8 JavaScript engine for server-side javascript.
                   </Paragraph>
                 </Box>
               </Box>
@@ -228,7 +228,7 @@ export default function Home() {
                     SQL & MongoDb
                   </Heading>
                   <Paragraph mt={1} fontSize="sm">
-                    Both are great, and they have their use cases.
+                    Both database are great, and they have their use cases.
                   </Paragraph>
                 </Box>
               </Box>
@@ -285,7 +285,7 @@ export default function Home() {
                     Figma
                   </Heading>
                   <Paragraph mt={1} fontSize="sm">
-                    Figma is easy to use software for UI/UX design.
+                    Figma is powerfull & easy to use software for UI/UX design.
                   </Paragraph>
                 </Box>
               </Box>
