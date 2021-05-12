@@ -30,13 +30,13 @@ const About = () => {
             <Box>
               <Heading
                 as="h1"
-                fontSize={{ base: '28px', md: '40px', lg: '48px' }}
+                fontSize={{ base: '24px', md: '30px', lg: '36px' }}
                 mb={4}
               >
                 About Me
               </Heading>
-              <Collapse in={show} startingHeight={110}>
-                <Paragraph fontSize="2xl" lineHeight={1.6}>
+              <Collapse in={show} startingHeight={100}>
+                <Paragraph fontSize="xl" lineHeight={1.6}>
                   I started using the computer when I was 7 years old, I was
                   obsessed with gaming! but while doing just gaming I developed
                   interests in software I began to ask myself what are this
