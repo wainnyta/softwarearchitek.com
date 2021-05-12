@@ -1,8 +1,22 @@
-import Head from "next/head";
-import { Box, Container, Heading, SlideFade } from "@chakra-ui/react";
-import Paragraph from "../components/Paragraph";
+import Head from 'next/head';
+import {
+  Box,
+  Container,
+  Heading,
+  SlideFade,
+  Divider,
+  Button,
+  Collapse,
+  LightMode,
+} from '@chakra-ui/react';
+import Paragraph from '../components/Paragraph';
+import { useState } from 'react';
 
 const About = () => {
+  const [show, setShow] = useState(false);
+
+  const handleToggle = () => setShow(!show);
+
   return (
     <div>
       <Head>
@@ -16,17 +30,64 @@ const About = () => {
             <Box>
               <Heading
                 as="h1"
-                fontSize={{ base: "28px", md: "40px", lg: "48px" }}
+                fontSize={{ base: '28px', md: '40px', lg: '48px' }}
                 mb={4}
               >
                 About Me
               </Heading>
-              <Paragraph fontSize="2xl" lineHeight={1.6}>
-                Full stack developer - UI / UX Designer, focused on Javascript,{" "}
-                Nodejs React . I work as a full stack developer. You’ve found my
-                personal website on the internet
-              </Paragraph>
+              <Collapse in={show} startingHeight={110}>
+                <Paragraph fontSize="2xl" lineHeight={1.6}>
+                  I started using the computer when I was 7 years old, I was
+                  obsessed with gaming! but while doing just gaming I developed
+                  interests in software I began to ask myself what are this
+                  software on my desktop I never check them I always go for the
+                  game icon and that day everything changed. I started using
+                  photoshop and loved it I developed an interest in graphic
+                  design and I thought I will be doing that for the rest of my
+                  life but that changed when I got to college I started
+                  programming it was not fun at first I already knew HTML & CSS
+                  and some JS but that wasn't helping me understanding C# & C++,
+                  I didn't like building apps for windows using WinForm so I
+                  started work on my web skills and I picked Node.js & React and
+                  never looked back.
+                </Paragraph>
+              </Collapse>
+              <LightMode>
+                <Button
+                  size="sm"
+                  onClick={handleToggle}
+                  mt="1rem"
+                  colorScheme="green"
+                  bg="green.500"
+                >
+                  Show {show ? 'Less' : 'More'}
+                </Button>
+              </LightMode>
             </Box>
+            <Divider my={10} />
+          </SlideFade>
+          <SlideFade in={true} offsetY={80} delay={0.2}>
+            <Heading
+              as="h1"
+              fontSize={{ base: '24px', md: '30px', lg: '36px' }}
+              mb={3}
+            >
+              Cool Stuff
+            </Heading>
+            <Paragraph fontSize="xl" lineHeight={1.6}>
+              ...
+            </Paragraph>
+            <Heading
+              as="h1"
+              fontSize={{ base: '24px', md: '30px', lg: '36px' }}
+              mt={10}
+              mb={3}
+            >
+              Meh..
+            </Heading>
+            <Paragraph fontSize="xl" lineHeight={1.6}>
+              ...
+            </Paragraph>
           </SlideFade>
         </Container>
       </main>

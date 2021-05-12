@@ -94,7 +94,7 @@ export default function Home() {
                   </ButtonGroup>
                 </LightMode>
               </Box>
-              <Divider my={10}  />
+              <Divider my={10} />
             </Box>
           </SlideFade>
           <SlideFade in={true} offsetY={80} delay={0.2}>
@@ -107,7 +107,7 @@ export default function Home() {
             </Heading>
             <Paragraph fontSize="xl" lineHeight={1.6}>
               As a full-stack web developer there are alot of tools you use in
-              your daily bases, these are primary tools that i use.
+              your daily bases, these are primary tools that i use & like.
             </Paragraph>
             <Grid
               mt={10}
