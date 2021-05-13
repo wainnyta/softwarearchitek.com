@@ -31,7 +31,7 @@ import ToolCard from '../components/ToolCard';
 
 export default function Home() {
   //TODO: Build a CMS to manage website content
-  
+
   const [tools, setTools] = useState([
     {
       name: 'Node.js',
@@ -49,7 +49,7 @@ export default function Home() {
       name: 'React.js',
       description: 'A JavaScript library for building user interfaces.',
       icon: <FaReact fontSize="20px" />,
-      url: 'https://www.nodejs.org',
+      url: 'https://www.reactjs.org',
     },
     {
       name: 'SQL & MongoDb',
@@ -127,7 +127,7 @@ export default function Home() {
                     <Button
                       colorScheme="green"
                       bg="green.500"
-                      href="mailto:info@meera.dev"
+                      href=" https://wa.me/+9647501315441"
                       borderRadius={5}
                       p={3}
                       as="a"
