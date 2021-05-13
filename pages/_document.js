@@ -9,6 +9,11 @@ export default class Document extends NextDocument {
         <Head />
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <meta
+            name="description"
+            content="Meer Bahadin | Full stack developer - UI / UX Designer"
+          />
+          <link rel="icon" href="/favicon.ico" />
           <Main />
           <NextScript />
         </body>

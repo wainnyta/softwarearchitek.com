@@ -37,19 +37,19 @@ const About = () => {
               </Heading>
               <Collapse in={show} startingHeight={100}>
                 <Paragraph fontSize="xl" lineHeight={1.6}>
-                  I started using the computer when I was 7 years old, I was
-                  obsessed with gaming! but while doing just gaming I developed
-                  interests in software I began to ask myself what are this
-                  software on my desktop I never check them I always go for the
-                  game icon and that day everything changed. I started using
-                  photoshop and loved it I developed an interest in graphic
-                  design and I thought I will be doing that for the rest of my
-                  life but that changed when I got to college I started
-                  programming it was not fun at first I already knew HTML & CSS
-                  and some JS but that wasn't helping me understanding C# & C++,
-                  I didn't like building apps for windows using WinForm so I
-                  started work on my web skills and I picked Node.js & React and
-                  never looked back.
+                  I started using a computer when I was 7 years old, I was
+                  obsessed with gaming! But while I was only doing games, I
+                  developed interests in software, I began to ask myself about
+                  those programs on my desktop, I have never checked them I was
+                  always going for the game icons. The day I started to use
+                  photoshop everything changed, I loved it and I developed an
+                  interest in graphic design, I thought that I will be doing
+                  that for the rest of my life, but thought changed when I got
+                  to college, I started programming, it wasn't fun at first, I
+                  already knew HTML & CSS and some JS but that wasn't helping me
+                  understanding C# & C++, I didn't like building apps for
+                  windows using WinForm so I started work on my web skills and I
+                  picked Node.js & React and never looked back.
                 </Paragraph>
               </Collapse>
               <LightMode>
