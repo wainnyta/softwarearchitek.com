@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 import {
   Box,
   Container,
@@ -8,14 +8,36 @@ import {
   Button,
   Collapse,
   LightMode,
-} from '@chakra-ui/react';
-import Paragraph from '../components/Paragraph';
-import { useState } from 'react';
+  Tag,
+} from "@chakra-ui/react";
+import Paragraph from "../components/Paragraph";
+import { useState } from "react";
 
 const About = () => {
   const [show, setShow] = useState(false);
-
   const handleToggle = () => setShow(!show);
+
+  const [coolStuff, setCoolStuff] = useState([
+    "React",
+    "Javascript",
+    "Science",
+    "Illustration",
+    "AI",
+    "Space",
+    "Android",
+    "Movies",
+    "Comics",
+    "Figma",
+    "Tea",
+  ]);
+  const [notCoolStuff, setNotCoolStuff] = useState([
+    "Angular",
+    "Jquery",
+    "Coffee",
+    "Politics",
+    "Narrow-minded",
+    "Working Overtime",
+  ]);
 
   return (
     <div>
@@ -30,7 +52,7 @@ const About = () => {
             <Box>
               <Heading
                 as="h1"
-                fontSize={{ base: '24px', md: '30px', lg: '36px' }}
+                fontSize={{ base: "24px", md: "30px", lg: "36px" }}
                 mb={4}
               >
                 About Me
@@ -60,7 +82,7 @@ const About = () => {
                   colorScheme="green"
                   bg="green.500"
                 >
-                  Show {show ? 'Less' : 'More'}
+                  Show {show ? "Less" : "More"}
                 </Button>
               </LightMode>
             </Box>
@@ -69,24 +91,44 @@ const About = () => {
           <SlideFade in={true} offsetY={80} delay={0.2}>
             <Heading
               as="h1"
-              fontSize={{ base: '24px', md: '30px', lg: '36px' }}
+              fontSize={{ base: "24px", md: "30px", lg: "36px" }}
               mb={3}
             >
               Cool Stuff
             </Heading>
             <Paragraph fontSize="xl" lineHeight={1.6}>
-              ...
+              {coolStuff.map((item) => (
+                <Tag
+                  size="lg"
+                  colorScheme="green"
+                  key={item}
+                  marginY={2}
+                  marginRight={2}
+                >
+                  {item}
+                </Tag>
+              ))}
             </Paragraph>
             <Heading
               as="h1"
-              fontSize={{ base: '24px', md: '30px', lg: '36px' }}
+              fontSize={{ base: "24px", md: "30px", lg: "36px" }}
               mt={10}
               mb={3}
             >
               Meh..
             </Heading>
             <Paragraph fontSize="xl" lineHeight={1.6}>
-              ...
+              {notCoolStuff.map((item) => (
+                <Tag
+                  size="lg"
+                  colorScheme="red"
+                  key={item}
+                  marginY={2}
+                  marginRight={2}
+                >
+                  {item}
+                </Tag>
+              ))}
             </Paragraph>
           </SlideFade>
         </Container>
