@@ -10,7 +10,6 @@ import {
   Divider,
   Grid,
   LightMode,
-  IconButton,
   Button,
   ButtonGroup,
 } from '@chakra-ui/react';
