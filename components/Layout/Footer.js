@@ -5,10 +5,11 @@ import {
   Container,
   ButtonGroup,
   IconButton,
-} from '@chakra-ui/react';
+  Link,
+} from "@chakra-ui/react";
 
-import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
-import Logo from '../Logo';
+import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import Logo from "../Logo";
 
 const Footer = () => (
   <Box
@@ -17,7 +18,7 @@ const Footer = () => (
     mx="auto"
     maxW="7xl"
     py="12"
-    px={{ base: '4', md: '8' }}
+    px={{ base: "4", md: "8" }}
   >
     <Container maxW="container.lg">
       <Stack>
@@ -56,7 +57,15 @@ const Footer = () => (
           </ButtonGroup>
         </Stack>
         <Text fontSize="sm">
-          &copy; {new Date().getFullYear()} Meer Bahadin
+          &copy; {new Date().getFullYear()} Meer Bahadin, made with{" "}
+          <Link
+            color="green.300"
+            href="https://www.nextjs.org"
+            isExternal
+            fontWeight="700"
+          >
+            Next.js
+          </Link>
         </Text>
       </Stack>
     </Container>

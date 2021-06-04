@@ -52,7 +52,7 @@ const About = () => {
             <Box>
               <Heading
                 as="h1"
-                fontSize={{ base: "24px", md: "30px", lg: "36px" }}
+                fontSize={{ base: "28px", md: "32px", lg: "36px" }}
                 mb={4}
               >
                 About Me

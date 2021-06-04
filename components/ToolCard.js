@@ -4,8 +4,10 @@ import {
   IconButton,
   LinkOverlay,
   LinkBox,
-} from '@chakra-ui/react';
-import Paragraph from './Paragraph';
+  useColorModeValue,
+  
+} from "@chakra-ui/react";
+import Paragraph from "./Paragraph";
 
 const ToolCard = ({ tool }) => {
   return (
@@ -13,7 +15,7 @@ const ToolCard = ({ tool }) => {
       <Box
         w="100%"
         p={4}
-        borderColor="gray.700"
+        borderColor={useColorModeValue("gray.300", "gray.700")}
         borderRadius={5}
         borderWidth="1px"
         transition=".5s"
@@ -21,7 +23,7 @@ const ToolCard = ({ tool }) => {
         d="flex"
         role="group"
         _hover={{
-          borderColor: 'green.300',
+          borderColor: "green.300",
         }}
       >
         <IconButton
@@ -30,7 +32,7 @@ const ToolCard = ({ tool }) => {
           target="_blank"
           aria-label={tool?.name}
           mr={3}
-          _groupHover={{ color: 'green.300' }}
+          _groupHover={{ color: "green.300" }}
           icon={tool?.icon}
         />
         <Box>

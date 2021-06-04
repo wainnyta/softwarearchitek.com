@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import { useState } from 'react';
+import Head from "next/head";
+import { useState } from "react";
 
 import {
   Box,
@@ -12,7 +12,7 @@ import {
   LightMode,
   Button,
   ButtonGroup,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
 import {
   FaEnvelope,
@@ -23,52 +23,52 @@ import {
   FaDatabase,
   FaGitAlt,
   FaFigma,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
-import Paragraph from '../components/Paragraph';
-import ToolCard from '../components/ToolCard';
+import Paragraph from "../components/Paragraph";
+import ToolCard from "../components/ToolCard";
 
 export default function Home() {
   //TODO: Build a CMS to manage website content
 
   const [tools, setTools] = useState([
     {
-      name: 'Node.js',
+      name: "Node.js",
       description: "Chrome's V8 JavaScript engine for server-side javascript.",
       icon: <FaNodeJs fontSize="20px" />,
-      url: 'https://www.nodejs.org',
+      url: "https://www.nodejs.org",
     },
     {
-      name: 'Javascript',
+      name: "Javascript",
       description: "These days you can't build an amazing product without JS.",
       icon: <FaJs fontSize="20px" />,
-      url: 'https://www.javascript.info',
+      url: "https://www.javascript.info",
     },
     {
-      name: 'React.js',
-      description: 'A JavaScript library for building user interfaces.',
+      name: "React.js",
+      description: "A JavaScript library for building user interfaces.",
       icon: <FaReact fontSize="20px" />,
-      url: 'https://www.reactjs.org',
+      url: "https://www.reactjs.org",
     },
     {
-      name: 'SQL & MongoDb',
-      description: 'Both database are great, and they have their use cases.',
+      name: "SQL & MongoDb",
+      description: "Both database are great, and they have their use cases.",
       icon: <FaDatabase fontSize="20px" />,
-      url: 'https://www.mongodb.com/',
+      url: "https://www.mongodb.com/",
     },
     {
-      name: 'GIT & Github',
+      name: "GIT & Github",
       description:
-        'A version control system that gives you a lot of flexibility.',
+        "A version control system that gives you a lot of flexibility.",
       icon: <FaGitAlt fontSize="20px" />,
-      url: 'https://medium.com/swlh/things-about-git-and-github-you-need-to-know-as-developer-907baa0bed79',
+      url: "https://medium.com/swlh/things-about-git-and-github-you-need-to-know-as-developer-907baa0bed79",
     },
     {
-      name: 'Figma',
+      name: "Figma",
       description:
-        'Figma is powerfull & easy to use software for UI/UX design.',
+        "Figma is powerfull & easy to use software for UI/UX design.",
       icon: <FaFigma fontSize="20px" />,
-      url: 'https://www.figma.com/',
+      url: "https://www.figma.com/",
     },
   ]);
 
@@ -90,18 +90,18 @@ export default function Home() {
         <meta property="og:image" content="/meta-image.jpg" />
       </Head>
       <main>
-        <Container maxW="container.lg" mt={10}>
+        <Container maxW="container.lg" mt={["5", "10"]}>
           <SlideFade in={true} offsetY={80}>
             <Box>
               <Heading
                 as="h1"
-                fontSize={{ base: '28px', md: '40px', lg: '48px' }}
+                fontSize={{ base: "28px", md: "40px", lg: "48px" }}
                 mb={3}
               >
                 Hey , I’m Meer Bahadin
               </Heading>
               <Paragraph fontSize="2xl" lineHeight={1.6}>
-                Full stack developer - UI / UX Designer, focused on Javascript,{' '}
+                Full stack developer - UI / UX Designer, focused on Javascript,{" "}
                 <Link
                   color="green.300"
                   href="https://www.nodejs.org"
@@ -109,7 +109,7 @@ export default function Home() {
                   fontWeight="700"
                 >
                   Nodejs,
-                </Link>{' '}
+                </Link>{" "}
                 <Link
                   color="green.300"
                   href="https://www.reactjs.org"
@@ -155,7 +155,7 @@ export default function Home() {
           <SlideFade in={true} offsetY={80} delay={0.2}>
             <Heading
               as="h1"
-              fontSize={{ base: '24px', md: '30px', lg: '36px' }}
+              fontSize={{ base: "24px", md: "30px", lg: "36px" }}
               mb={3}
             >
               Primary Stack & Technologies
@@ -167,10 +167,10 @@ export default function Home() {
             <Grid
               mt={10}
               templateColumns={[
-                '1fr',
-                '1fr',
-                'repeat(2, 1fr)',
-                'repeat(3, 1fr)',
+                "1fr",
+                "1fr",
+                "repeat(2, 1fr)",
+                "repeat(3, 1fr)",
               ]}
               gap={5}
             >
