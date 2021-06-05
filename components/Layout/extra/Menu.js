@@ -9,7 +9,7 @@ import {
 import { FaAngleDown } from "react-icons/fa";
 import Link from "./Link";
 
-const DropdownMenu = () => {
+const DropdownMenu = ({ currentPath, extraLinks }) => {
   return (
     <Menu isLazy>
       <MenuButton
@@ -29,13 +29,20 @@ const DropdownMenu = () => {
       >
         Links
       </MenuButton>
-      <MenuList>
-        <Link href="/books">
-          <MenuItem>Books</MenuItem>
-        </Link>
-        <Link href="/blog">
-          <MenuItem>Blog</MenuItem>
-        </Link>
+      <MenuList bg={useColorModeValue("gray.50", "gray.800")}>
+        {extraLinks &&
+          extraLinks?.map(({ name, route }) => (
+            <Link href={route} key={name}>
+              <MenuItem
+                bg={
+                  currentPath === route &&
+                  useColorModeValue("gray.200", "gray.700")
+                }
+              >
+                {name}
+              </MenuItem>
+            </Link>
+          ))}
       </MenuList>
     </Menu>
   );

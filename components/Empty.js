@@ -2,7 +2,7 @@ import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 import { FaFolderOpen } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const Empty = () => {
+const Empty = ({ message = "Ohh! Such an empty place 😫" }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,7 +20,7 @@ const Empty = () => {
       >
         <FaFolderOpen style={{ color: "#718096" }} />
         <Text color="gray.500" fontSize="lg" ml={2}>
-          Ohh! Such an empty place 😫
+          {message}
         </Text>
       </Box>
     </motion.div>

@@ -30,6 +30,17 @@ const Links = [
   },
 ];
 
+const extraLinks = [
+  {
+    name: "Books",
+    route: "/books",
+  },
+  {
+    name: "Blog",
+    route: "/blog",
+  },
+];
+
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
@@ -50,7 +61,7 @@ const Navbar = () => {
           {link.name}
         </Link>
       ))}
-      <DropdownMenu />
+      <DropdownMenu currentPath={asPath} extraLinks={extraLinks} />
     </>
   );
 
