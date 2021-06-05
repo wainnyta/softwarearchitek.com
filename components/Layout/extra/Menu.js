@@ -11,7 +11,7 @@ import Link from "./Link";
 
 const DropdownMenu = ({ currentPath, extraLinks }) => {
   return (
-    <Menu isLazy>
+    <Menu autoSelect={false}>
       <MenuButton
         p={2}
         textAlign="left"
