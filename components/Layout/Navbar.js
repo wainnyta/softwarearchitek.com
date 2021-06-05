@@ -6,14 +6,12 @@ import {
   useColorMode,
   Button,
   useDisclosure,
-  useColorModeValue,
   Stack,
   Container,
-  Link as ChakraLink,
 } from "@chakra-ui/react";
+import Link from "./extra/Link";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import DropdownMenu from "./extra/Menu";
-import NextLink from "next/link";
 import Logo from "../Logo";
 import { useRouter } from "next/router";
 
@@ -32,29 +30,29 @@ const Links = [
   },
 ];
 
-const Link = ({ children, href, currentPath, ...props }) => (
-  <NextLink href={href} passhref>
-    <ChakraLink
-      p={2}
-      bg={href === currentPath && useColorModeValue("gray.100", "gray.700")}
-      rounded={"md"}
-      _hover={{
-        textDecoration: "none",
-        bg: useColorModeValue("gray.200", "gray.700"),
-      }}
-      {...props}
-    >
-      {children}
-    </ChakraLink>
-  </NextLink>
-);
-
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
   let router = useRouter();
   let { asPath } = router;
+
+  const navigationItem = (
+    <>
+      {Links.map((link) => (
+        <Link
+          href={link.route}
+          key={link.name}
+          p={2}
+          rounded={"md"}
+          currentPath={asPath}
+        >
+          {link.name}
+        </Link>
+      ))}
+      <DropdownMenu />
+    </>
+  );
 
   return (
     <>
@@ -77,12 +75,7 @@ const Navbar = () => {
                 spacing={4}
                 display={{ base: "none", md: "flex" }}
               >
-                {Links.map((link) => (
-                  <Link href={link.route} key={link.name} currentPath={asPath}>
-                    {link.name}
-                  </Link>
-                ))}
-                <DropdownMenu />
+                {navigationItem}
               </HStack>
             </HStack>
             <Flex alignItems={"center"}>
@@ -94,12 +87,7 @@ const Navbar = () => {
           {isOpen ? (
             <Box pb={4} mt={3}>
               <Stack as={"nav"} spacing={4}>
-                {Links.map((link) => (
-                  <Link href={link.route} key={link.name}>
-                    {link.name}
-                  </Link>
-                ))}
-                <DropdownMenu />
+                {navigationItem}
               </Stack>
             </Box>
           ) : null}

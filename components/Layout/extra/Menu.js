@@ -7,6 +7,7 @@ import {
   MenuItem,
 } from "@chakra-ui/react";
 import { FaAngleDown } from "react-icons/fa";
+import Link from "./Link";
 
 const DropdownMenu = () => {
   return (
@@ -22,14 +23,19 @@ const DropdownMenu = () => {
         _active={{
           bg: useColorModeValue("gray.200", "gray.700"),
         }}
+        fontWeight={400}
         as={Button}
         rightIcon={<FaAngleDown />}
       >
         Links
       </MenuButton>
       <MenuList>
-        <MenuItem>Books</MenuItem>
-        <MenuItem>Blog</MenuItem>
+        <Link href="/books">
+          <MenuItem>Books</MenuItem>
+        </Link>
+        <Link href="/blog">
+          <MenuItem>Blog</MenuItem>
+        </Link>
       </MenuList>
     </Menu>
   );

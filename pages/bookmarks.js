@@ -2,7 +2,6 @@ import Head from "next/head";
 import {
   Box,
   Container,
-  Grid,
   Heading,
   Divider,
   SlideFade,
@@ -28,7 +27,7 @@ const Bookmarks = () => {
     },
   ]);
 
-  const [bookmarks, setBookmarks] = useState();
+  const [bookmarks, setBookmarks] = useState([]);
 
   const [activeCategory, setActiveCategory] = useState("website");
 
@@ -41,12 +40,19 @@ const Bookmarks = () => {
   return (
     <div>
       <Head>
-        <title>Bookmakrs | Meer Bahadin</title>
+        <title>Bookmarks | Meer Bahadin</title>
         <meta
           name="description"
-          content=" A list of my favorite articles & websites, updated weekly."
+          content="A list of my favorite articles & websites, updated weekly."
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://meera.dev/" />
+        <meta
+          property="og:title"
+          content="A list of my favorite articles & websites, updated weekly."
+        />
+        <meta property="og:image" content="/meta-image.jpg" />
       </Head>
       <main>
         <Container maxW="container.lg" mt={10}>
@@ -93,7 +99,7 @@ const Bookmarks = () => {
                 sx={{ columnCount: [1, 2, 3], columnGap: "20px" }}
               >
                 {bookmarks?.map((item) => (
-                  <BookmarkCard key={item.title} bookmark={item} />
+                  <BookmarkCard bookmark={item} key={item.title} />
                 ))}
               </Box>
             )}

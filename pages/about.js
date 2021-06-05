@@ -15,7 +15,6 @@ import { useState } from "react";
 
 const About = () => {
   const [show, setShow] = useState(false);
-  const handleToggle = () => setShow(!show);
 
   const [coolStuff, setCoolStuff] = useState([
     "React",
@@ -39,12 +38,24 @@ const About = () => {
     "Working Overtime",
   ]);
 
+  const handleToggle = () => setShow(!show);
+
   return (
     <div>
       <Head>
-        <title>About | Meer Bahadin</title>
-        <meta name="description" content="Meer Bahadin | Full stack developer - UI / UX Designer" />
-        <link rel="icon" href="/favicon.ico" />
+        //TODO: move SEO meta tags to seperate component.
+        <title>Meer Bahadin</title>
+        <meta
+          name="description"
+          content="Meer Bahadin | Full stack developer - UI / UX Designer"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://meera.dev/" />
+        <meta
+          property="og:title"
+          content="Meer Bahadin | Full stack developer - UI / UX Designer"
+        />
+        <meta property="og:image" content="/meta-image.jpg" />
       </Head>
       <main>
         <Container maxW="container.lg" mt={10}>
