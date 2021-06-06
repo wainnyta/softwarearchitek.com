@@ -37,7 +37,7 @@ const ToolCard = ({ tool }) => {
         />
         <Box>
           <LinkOverlay href={tool?.url} rel="noopener" isExternal>
-            <Heading as="h6" size="sm">
+            <Heading as="h2" size="sm">
               {tool?.name}
             </Heading>
             <Paragraph mt={1} fontSize="sm">

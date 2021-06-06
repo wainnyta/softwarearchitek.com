@@ -106,14 +106,14 @@ export default function Home() {
                   color="green.300"
                   href="https://www.nodejs.org"
                   isExternal
-                  fontWeight="700"
+                  fontWeight="500"
                 >
                   Nodejs,
                 </Link>{" "}
                 <Link
                   color="green.300"
                   href="https://www.reactjs.org"
-                  fontWeight="700"
+                  fontWeight="500"
                   isExternal
                 >
                   React

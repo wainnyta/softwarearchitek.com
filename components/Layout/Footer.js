@@ -65,14 +65,17 @@ const Footer = () => (
             Next.js
           </Link>
         </Text>
-        <Link
-          ml={2}
+        <IconButton
+          as="a"
+          aria-label="Source Button"
+          rel="noopener"
+          target="_blank"
           color="green.300"
           href="https://github.com/meerbahadin/meera.dev/"
           isExternal
         >
           <FaGithub fontSize="18px" />
-        </Link>
+        </IconButton>
       </Stack>
     </Container>
   </Box>

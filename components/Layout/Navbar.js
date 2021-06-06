@@ -90,7 +90,7 @@ const Navbar = () => {
               </HStack>
             </HStack>
             <Flex alignItems={"center"}>
-              <Button onClick={toggleColorMode}>
+              <Button aria-label="Switch Theme" onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
             </Flex>
