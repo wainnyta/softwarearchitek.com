@@ -5,7 +5,6 @@ import {
   LinkOverlay,
   LinkBox,
   useColorModeValue,
-  
 } from "@chakra-ui/react";
 import Paragraph from "./Paragraph";
 
@@ -29,6 +28,7 @@ const ToolCard = ({ tool }) => {
         <IconButton
           as="a"
           href={tool?.url}
+          rel="noopener"
           target="_blank"
           aria-label={tool?.name}
           mr={3}
@@ -36,7 +36,7 @@ const ToolCard = ({ tool }) => {
           icon={tool?.icon}
         />
         <Box>
-          <LinkOverlay href={tool?.url} isExternal>
+          <LinkOverlay href={tool?.url} rel="noopener" isExternal>
             <Heading as="h6" size="sm">
               {tool?.name}
             </Heading>
