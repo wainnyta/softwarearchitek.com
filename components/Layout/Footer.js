@@ -30,7 +30,7 @@ const Footer = () => (
         pb={5}
       >
         <Logo />
-        <ButtonGroup variant="ghost" color="gray.600">
+        <ButtonGroup variant="ghost">
           <IconButton
             as="a"
             href="https://www.facebook.com/meerbahadin.1"
@@ -70,12 +70,10 @@ const Footer = () => (
           aria-label="Source Button"
           rel="noopener"
           target="_blank"
-          color="green.300"
           href="https://github.com/meerbahadin/meera.dev/"
           isExternal
-        >
-          <FaGithub fontSize="18px" />
-        </IconButton>
+          icon={<FaGithub fontSize="18px" />}
+        />
       </Stack>
     </Container>
   </Box>
