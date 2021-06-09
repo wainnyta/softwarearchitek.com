@@ -8,7 +8,7 @@ import {
   Button,
   Stack,
 } from "@chakra-ui/react";
-import { FaNewspaper, FaGlobe } from "react-icons/fa";
+import { FaGithubAlt, FaGlobe } from "react-icons/fa";
 import Paragraph from "../components/Paragraph";
 import { useState, useEffect } from "react";
 import BookmarkCard from "../components/BookmarkCard";
@@ -22,8 +22,8 @@ const Bookmarks = () => {
       icon: <FaGlobe />,
     },
     {
-      name: "article",
-      icon: <FaNewspaper />,
+      name: "repository",
+      icon: <FaGithubAlt />,
     },
   ]);
 

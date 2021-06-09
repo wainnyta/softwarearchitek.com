@@ -95,6 +95,16 @@ let bookmarksData = [
     url: "https://nextjs.org/",
     tag: "development",
   },
+  {
+    title: "MERN authentication with email verification",
+    description:
+      "MERN authentication with email verification, hooks and docker (prod/dev).",
+
+    type: "repository",
+    image: "https://user-images.githubusercontent.com/40322270/50053751-aa653080-013a-11e9-9a8d-35a55c9042f1.png",
+    url: "https://github.com/flaviuse/mern-authentication",
+    tag: "development",
+  },
 ];
 
 export { bookmarksData };
