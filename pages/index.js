@@ -29,8 +29,6 @@ import Paragraph from "../components/Paragraph";
 import ToolCard from "../components/ToolCard";
 
 export default function Home() {
-  //TODO: Build a CMS to manage website content
-
   const [tools, setTools] = useState([
     {
       name: "Node.js",
