@@ -66,7 +66,7 @@ const Footer = () => (
           </Link>
         </Text>
         <IconButton
-          as="a"
+          as={Link}
           aria-label="Source Button"
           rel="noopener"
           target="_blank"

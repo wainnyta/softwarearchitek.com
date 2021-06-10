@@ -32,7 +32,7 @@ const Bookmarks = ({ bookmarksData }) => {
 
   useEffect(() => {
     let filteredBookmark = bookmarksData.filter(
-      (item) => item?.fields.type === activeCategory
+      (item) => item.fields.type === activeCategory
     );
     setBookmarks(filteredBookmark);
   }, [activeCategory]);
@@ -98,7 +98,10 @@ const Bookmarks = ({ bookmarksData }) => {
                 sx={{ columnCount: [1, 2, 3], columnGap: "20px" }}
               >
                 {bookmarks?.map((item) => (
-                  <BookmarkCard bookmark={item} key={item.title} />
+                  <BookmarkCard
+                    bookmark={item.fields}
+                    key={item.fields.title}
+                  />
                 ))}
               </Box>
             )}
@@ -110,8 +113,10 @@ const Bookmarks = ({ bookmarksData }) => {
 };
 
 export async function getStaticProps() {
+  let sortQuery = "sort[0][field]=title&sort[0][direction]=asc";
+
   let res = await fetch(
-    `${process.env.API_ENPOINT}${process.env.WEBSITE_BASE}/bookmakrs`,
+    `${process.env.API_ENPOINT}${process.env.WEBSITE_BASE}/bookmarks?${sortQuery}`,
     {
       headers: {
         Authorization: `Bearer ${process.env.AIRETABLE_AUTH}`,
@@ -121,10 +126,17 @@ export async function getStaticProps() {
 
   let data = await res.json();
 
+  if (data.error) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       bookmarksData: data?.records,
     },
+    revalidate: 5,
   };
 }
 

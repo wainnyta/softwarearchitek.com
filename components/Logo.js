@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <svg
       version="1.1"
-      fill={`${colorMode === "light" ? "black" : "#68d491"}`}
+      fill={`${colorMode === "light" ? "black" : "#38a169"}`}
       x="0px"
       y="0px"
       width="30"
@@ -23,4 +23,3 @@ const Logo = () => {
 };
 
 export default Logo;
-

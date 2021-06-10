@@ -7,12 +7,10 @@ import {
   useColorModeValue,
   Tag,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import Paragraph from "./Paragraph";
+import { motion } from "framer-motion";
 
 const BookmarkCard = ({ bookmark }) => {
-  const { image, title, url, description, tag } = bookmark?.fields;
-
   return (
     <motion.div
       initial={{ y: 50, opacity: 0 }}
@@ -41,17 +39,23 @@ const BookmarkCard = ({ bookmark }) => {
             alignItems="start"
             justifyContent="space-between"
           >
-            <Image src={image} width="100%" mb={5} rounded="md" alt={title} />
-            <LinkOverlay href={url} isExternal>
+            <Image
+              src={bookmark?.image}
+              width="100%"
+              mb={5}
+              rounded="md"
+              alt={bookmark?.title}
+            />
+            <LinkOverlay href={bookmark?.url} isExternal>
               <Heading as="h6" size="md">
-                {title}
+                {bookmark?.title}
               </Heading>
               <Paragraph mt={1} fontSize="sm">
-                {description}
+                {bookmark?.description}
               </Paragraph>
             </LinkOverlay>
             <Tag mt={5} textTransform="uppercase">
-              {tag}
+              {bookmark?.tag}
             </Tag>
           </Box>
         </Box>
