@@ -12,10 +12,9 @@ import { FaGithubAlt, FaGlobe } from "react-icons/fa";
 import Paragraph from "../components/Paragraph";
 import { useState, useEffect } from "react";
 import BookmarkCard from "../components/BookmarkCard";
-import { bookmarksData } from "../_DATA/bookmarks";
 import Empty from "../components/Empty";
 
-const Bookmarks = () => {
+const Bookmarks = ({ bookmarksData }) => {
   const [category, setCategory] = useState([
     {
       name: "website",
@@ -33,7 +32,7 @@ const Bookmarks = () => {
 
   useEffect(() => {
     let filteredBookmark = bookmarksData.filter(
-      (item) => item.type === activeCategory
+      (item) => item?.fields.type === activeCategory
     );
     setBookmarks(filteredBookmark);
   }, [activeCategory]);
@@ -109,5 +108,24 @@ const Bookmarks = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  let res = await fetch(
+    `${process.env.API_ENPOINT}${process.env.WEBSITE_BASE}/bookmakrs`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.AIRETABLE_AUTH}`,
+      },
+    }
+  );
+
+  let data = await res.json();
+
+  return {
+    props: {
+      bookmarksData: data?.records,
+    },
+  };
+}
 
 export default Bookmarks;

@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 import Paragraph from "./Paragraph";
 
 const BookmarkCard = ({ bookmark }) => {
+  const { image, title, url, description, tag } = bookmark?.fields;
+
   return (
     <motion.div
       initial={{ y: 50, opacity: 0 }}
@@ -39,17 +41,17 @@ const BookmarkCard = ({ bookmark }) => {
             alignItems="start"
             justifyContent="space-between"
           >
-            <Image src={bookmark?.image} width="100%" mb={5} rounded="md" alt={bookmark?.title} />
-            <LinkOverlay href={bookmark?.url} isExternal>
+            <Image src={image} width="100%" mb={5} rounded="md" alt={title} />
+            <LinkOverlay href={url} isExternal>
               <Heading as="h6" size="md">
-                {bookmark?.title}
+                {title}
               </Heading>
               <Paragraph mt={1} fontSize="sm">
-                {bookmark?.description}
+                {description}
               </Paragraph>
             </LinkOverlay>
             <Tag mt={5} textTransform="uppercase">
-              {bookmark?.tag}
+              {tag}
             </Tag>
           </Box>
         </Box>
