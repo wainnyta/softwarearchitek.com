@@ -1,10 +1,13 @@
 import { Container } from "@chakra-ui/react";
-import Empty from "../../components/Empty";
+import Warn from "../../components/Warn";
 
 const Blog = () => {
   return (
     <Container>
-      <Empty message="This page doesn't exist yet, it will be in the future" />
+      <Warn
+        message="This page doesn't exist yet, it will be in the future"
+        type="empty"
+      />
     </Container>
   );
 };

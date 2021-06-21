@@ -12,7 +12,7 @@ import { FaGithubAlt, FaGlobe } from "react-icons/fa";
 import Paragraph from "../components/Paragraph";
 import { useState, useEffect } from "react";
 import BookmarkCard from "../components/BookmarkCard";
-import Empty from "../components/Empty";
+import Empty from "../components/Warn";
 
 const Bookmarks = ({ bookmarksData }) => {
   const [category, setCategory] = useState([
