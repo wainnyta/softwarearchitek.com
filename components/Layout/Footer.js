@@ -67,7 +67,8 @@ const Footer = () => (
         </Text>
         <IconButton
           as={Link}
-          aria-label="Source Button"
+          rounded="md"
+          aria-label="Github Repo"
           rel="noopener"
           href="https://github.com/meerbahadin/meera.dev/"
           isExternal
