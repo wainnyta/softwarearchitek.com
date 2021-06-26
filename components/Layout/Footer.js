@@ -69,7 +69,6 @@ const Footer = () => (
           as={Link}
           aria-label="Source Button"
           rel="noopener"
-          target="_blank"
           href="https://github.com/meerbahadin/meera.dev/"
           isExternal
           icon={<FaGithub fontSize="18px" />}
