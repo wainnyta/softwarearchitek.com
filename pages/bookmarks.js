@@ -9,10 +9,10 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { FaGithubAlt, FaGlobe } from "react-icons/fa";
-import Paragraph from "../components/Paragraph";
+import Paragraph from "components/Paragraph";
 import { useState, useEffect } from "react";
-import BookmarkCard from "../components/BookmarkCard";
-import Empty from "../components/Warn";
+import BookmarkCard from "components/BookmarkCard";
+import Message from "components/Message";
 
 const Bookmarks = ({ bookmarksData }) => {
   const [category, setCategory] = useState([
@@ -89,7 +89,7 @@ const Bookmarks = ({ bookmarksData }) => {
               ))}
             </Stack>
             {bookmarks?.length === 0 ? (
-              <Empty />
+              <Message />
             ) : (
               <Box
                 w="100%"

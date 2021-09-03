@@ -1,8 +1,8 @@
 import { Box, Container, Heading, Divider, SlideFade } from "@chakra-ui/react";
-import Paragraph from "../components/Paragraph";
+import Paragraph from "components/Paragraph";
 import Head from "next/head";
-import BookCard from "../components/BookCard";
-import Warn from "../components/Warn";
+import BookCard from "components/BookCard";
+import Message from "components/Message";
 
 const Books = ({ books }) => {
   return (
@@ -40,7 +40,7 @@ const Books = ({ books }) => {
         </SlideFade>
         <SlideFade in={true} offsetY={80} delay={0.2}>
           {books?.length === 0 ? (
-            <Empty />
+            <Message />
           ) : (
             <Box
               w="100%"
@@ -54,7 +54,7 @@ const Books = ({ books }) => {
             </Box>
           )}
         </SlideFade>
-        <Warn
+        <Message
           message="This just a small list of the book I like, but there's plenty of good books out there!"
           type="info"
         />

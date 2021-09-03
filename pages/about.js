@@ -10,7 +10,7 @@ import {
   LightMode,
   Tag,
 } from "@chakra-ui/react";
-import Paragraph from "../components/Paragraph";
+import Paragraph from "components/Paragraph";
 import { useState } from "react";
 
 const About = () => {
@@ -43,8 +43,7 @@ const About = () => {
   return (
     <div>
       <Head>
-        //TODO: move SEO meta tags to seperate component.
-        <title>Meer Bahadin</title>
+        <title>Meer Bahadin | About</title>
         <meta
           name="description"
           content="Meer Bahadin | Full stack developer - UI / UX Designer"
