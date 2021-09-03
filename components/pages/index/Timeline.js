@@ -11,7 +11,7 @@ const Timeline = () => {
       >
         Timeline
       </Heading>
-      <Heading mt={10} mb={5} as="h2" size="lg">
+      <Heading mt={10} mb={5} as="h2" size="md">
         2021
       </Heading>
       <List spacing={18} fontSize="18">
@@ -24,7 +24,7 @@ const Timeline = () => {
           Working as part-time UI / UX Designer
         </ListItem>
       </List>
-      <Heading mt={10} mb={5} as="h2" size="lg">
+      <Heading mt={10} mb={5} as="h2" size="md">
         2020
       </Heading>
       <List spacing={18} fontSize="18">
