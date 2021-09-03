@@ -25,7 +25,7 @@ const BookCard = ({ book }) => {
           p={4}
           mb={5}
           d="inline-block"
-          borderColor={useColorModeValue("gray.100", "gray.700")}
+          borderColor={useColorModeValue("gray.200", "gray.700")}
           borderRadius={5}
           borderWidth="1px"
           transition=".5s"
