@@ -1,5 +1,5 @@
 import { Heading, SlideFade, List, ListItem, ListIcon } from "@chakra-ui/react";
-import { FaCheckSquare } from "react-icons/fa";
+import { MdCheckCircle } from "react-icons/md";
 
 const Timeline = () => {
   return (
@@ -16,11 +16,11 @@ const Timeline = () => {
       </Heading>
       <List spacing={18} fontSize="18">
         <ListItem>
-          <ListIcon as={FaCheckSquare} color="green.500" />
+          <ListIcon as={MdCheckCircle} color="green.500" />
           Working as a full-stack developer at Click Iraq - 1 Year
         </ListItem>
         <ListItem>
-          <ListIcon as={FaCheckSquare} color="green.500" />
+          <ListIcon as={MdCheckCircle} color="green.500" />
           Working as part-time UI / UX Designer
         </ListItem>
       </List>
@@ -29,11 +29,11 @@ const Timeline = () => {
       </Heading>
       <List spacing={18} fontSize="18">
         <ListItem>
-          <ListIcon as={FaCheckSquare} color="green.500" />6 Month internship at
+          <ListIcon as={MdCheckCircle} color="green.500" />6 Month internship at
           Qaiwan Group as a IT specialist
         </ListItem>
         <ListItem>
-          <ListIcon as={FaCheckSquare} color="green.500" />
+          <ListIcon as={MdCheckCircle} color="green.500" />
           Graduated from college
         </ListItem>
       </List>
