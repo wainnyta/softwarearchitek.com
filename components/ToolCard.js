@@ -22,7 +22,7 @@ const ToolCard = ({ tool }) => {
         d="flex"
         role="group"
         _hover={{
-          borderColor: "green.300",
+          borderColor: "green.500",
         }}
       >
         <IconButton
@@ -32,7 +32,7 @@ const ToolCard = ({ tool }) => {
           target="_blank"
           aria-label={tool?.name}
           mr={3}
-          _groupHover={{ color: "green.300" }}
+          _groupHover={{ color: "green.500" }}
           icon={tool?.icon}
         />
         <Box>

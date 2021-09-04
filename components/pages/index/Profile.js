@@ -3,7 +3,6 @@ import {
   Heading,
   SlideFade,
   Link,
-  Divider,
   LightMode,
   Button,
   ButtonGroup,
@@ -26,7 +25,7 @@ const Profile = () => {
         <Paragraph fontSize="2xl" lineHeight={1.6}>
           Full stack developer - UI / UX Designer, focused on Javascript,{" "}
           <Link
-            color="green.300"
+            color="green.500"
             href="https://www.nodejs.org"
             isExternal
             fontWeight="500"
@@ -34,7 +33,7 @@ const Profile = () => {
             Nodejs,
           </Link>{" "}
           <Link
-            color="green.300"
+            color="green.500"
             href="https://www.reactjs.org"
             fontWeight="500"
             isExternal

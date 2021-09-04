@@ -61,7 +61,7 @@ const Footer = () => (
       <Stack direction="row" align="center" justify="space-between" pt={5}>
         <Text fontSize="md">
           &copy; {new Date().getFullYear()} Made with{" "}
-          <Link color="green.300" href="https://www.nextjs.org" isExternal>
+          <Link color="green.500" href="https://www.nextjs.org" isExternal>
             Next.js
           </Link>
         </Text>
