@@ -57,7 +57,7 @@ const Footer = () => (
           />
         </ButtonGroup>
       </Stack>
-      <Divider />
+      <Divider pt={2} />
       <Stack direction="row" align="center" justify="space-between" pt={5}>
         <Text fontSize="md">
           &copy; {new Date().getFullYear()} Made with{" "}
