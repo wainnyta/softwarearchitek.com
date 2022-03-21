@@ -2,6 +2,7 @@ import {extendTheme, withDefaultColorScheme} from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
 const config = {
+  initialColorMode: 'dark',
   useSystemColorMode: true,
 };
 
@@ -21,6 +22,7 @@ const fonts = {
 
 //const theme = extendTheme(withDefaultColorScheme({ ...config, styles, fonts, colorScheme: "telegram", }));
 const theme = extendTheme({
+  ...config,
   styles,
   fonts,
 },
