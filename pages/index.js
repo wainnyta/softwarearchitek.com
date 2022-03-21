@@ -1,35 +1,31 @@
 import Head from "next/head";
-import { Container, Divider } from "@chakra-ui/react";
+import {Container, Divider, useDisclosure} from "@chakra-ui/react";
 
 import Stack from "components/pages/index/Stack";
 import Timeline from "components/pages/index/Timeline";
 import Profile from "components/pages/index/Profile";
+import Projects from "../components/pages/index/Projects";
+import {useState} from "react";
+import ModalContact from "../components/pages/ModalContact";
+import Process from "../components/pages/index/Process";
+import Services from "../components/pages/index/Services";
+import {NextSeo} from "next-seo";
 
-export default function Home() {
+export default function Home({initialValues, setInitialValues, isOpen, onOpen, onClose}) {
+
   return (
     <div>
-      <Head>
-        <title>Meer Bahadin | Home</title>
-        <meta
-          name="description"
-          content="Meer Bahadin | Full stack developer - UI / UX Designer"
-        />
-        <meta property="og:type" content="website" />
-        <meta name="robots" content="follow, index" />
-        <meta property="og:url" content="https://meera.dev/" />
-        <meta
-          property="og:title"
-          content="Meer Bahadin | Full stack developer - UI / UX Designer"
-        />
-        <meta property="og:image" content="/meta-image.jpg" />
-      </Head>
       <main>
-        <Container maxW="container.lg" mt={["5", "10"]}>
-          <Profile />
+        <Container maxW="container.lg" mt={["5", "10"]} px={{base: 6, xl: 2, lg: 4}}>
+          <Profile isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
           <Divider my={10} />
-          <Stack />
-          <Divider my={10} />
-          <Timeline />
+          {/*<Projects isOpen={isOpen} onOpen={onOpen} onClose={onClose} />*/}
+          {/*<Process isOpen={isOpen} onOpen={onOpen} onClose={onClose} />*/}
+          <Services
+            isOpen={isOpen} onOpen={onOpen} onClose={onClose}
+            setInitialValues={setInitialValues} initialValues={initialValues} />
+          {/*<Stack />*/}
+
         </Container>
       </main>
     </div>

@@ -22,19 +22,10 @@ const ToolCard = ({ tool }) => {
         d="flex"
         role="group"
         _hover={{
-          borderColor: "green.500",
+          borderColor: "cyan.500",
         }}
       >
-        <IconButton
-          as="a"
-          href={tool?.url}
-          rel="noopener"
-          target="_blank"
-          aria-label={tool?.name}
-          mr={3}
-          _groupHover={{ color: "green.500" }}
-          icon={tool?.icon}
-        />
+        {tool.stackImage}
         <Box>
           <LinkOverlay href={tool?.url} rel="noopener" isExternal>
             <Heading as="h2" size="sm">

@@ -9,7 +9,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 
-import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import {FaFacebook, FaInstagram, FaLinkedin, FaGithub, FaEnvelope} from "react-icons/fa";
 import Logo from "../Logo";
 
 const Footer = () => (
@@ -31,27 +31,27 @@ const Footer = () => (
       >
         <Logo />
         <ButtonGroup variant="ghost">
+          {/*<IconButton*/}
+          {/*  as="a"*/}
+          {/*  href="https://www.facebook.com/meerbahadin.1"*/}
+          {/*  aria-label="Facebook"*/}
+          {/*  icon={<FaFacebook fontSize="20px" />}*/}
+          {/*/>*/}
           <IconButton
-            as="a"
-            href="https://www.facebook.com/meerbahadin.1"
-            aria-label="Facebook"
-            icon={<FaFacebook fontSize="20px" />}
+            as={"a"}
+            aria-label="Email"
+            icon={<FaEnvelope fontSize="20px" />}
+            href="mailto:wainnyta@gmail.com"
           />
           <IconButton
             as="a"
-            href="https://www.instagram.com/meeradev__/"
-            aria-label="instagram"
-            icon={<FaInstagram fontSize="20px" />}
-          />
-          <IconButton
-            as="a"
-            href="https://www.linkedin.com/in/meerbahadin/"
+            href="https://www.linkedin.com/in/wainny-ta-a5715359/"
             aria-label="Linkedin"
             icon={<FaLinkedin fontSize="20px" />}
           />
           <IconButton
             as="a"
-            href="https://www.github.com/meerbahadin"
+            href="https://www.github.com/wainnyta"
             aria-label="Github"
             icon={<FaGithub fontSize="20px" />}
           />
@@ -60,14 +60,14 @@ const Footer = () => (
       <Divider pt={2} />
       <Stack direction="row" align="center" justify="space-between" pt={5}>
         <Text fontSize="md">
-          &copy; {new Date().getFullYear()} Meer Bahadin{" "}
+          &copy; {new Date().getFullYear()} Software Architek {" "}
         </Text>
         <IconButton
           as={Link}
           rounded="md"
           aria-label="Github Repo"
           rel="noopener"
-          href="https://github.com/meerbahadin/meera.dev/"
+          href="https://github.com/wainnyta"
           isExternal
           icon={<FaGithub fontSize="18px" />}
         />

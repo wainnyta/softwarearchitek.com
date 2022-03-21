@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import {extendTheme, withDefaultColorScheme} from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
 const config = {
@@ -8,11 +8,22 @@ const config = {
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("gray.50", "#151a23")(props),
+      bg: mode("#fcfdfd", "#151a23")(props),
     },
   }),
 };
 
-const theme = extendTheme({ ...config, styles });
+const fonts = {
+  heading: "Nunito, -apple-system",
+  body: "Nunito, -apple-system",
+}
 
+
+//const theme = extendTheme(withDefaultColorScheme({ ...config, styles, fonts, colorScheme: "telegram", }));
+const theme = extendTheme({
+  styles,
+  fonts,
+},
+  withDefaultColorScheme({colorScheme: "linkedin"}),
+);
 export default theme;

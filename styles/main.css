@@ -7,7 +7,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #38a169;
+  background-color: #333;
   outline: 1px solid slategrey;
 }
 
@@ -33,7 +33,7 @@ body::-webkit-scrollbar-thumb {
   height: 30px;
   width: 30px;
   opacity: 0;
-  background: linear-gradient(#38a1692a, #38a16904);
+  background: linear-gradient(rgba(56, 133, 161, 0.16), rgba(210, 239, 252, 0.16));
   border-radius: 50%;
   transition: all 250ms;
 }
@@ -58,7 +58,7 @@ body::-webkit-scrollbar-thumb {
   width: 40px;
   opacity: 0;
   border-width: thin;
-  border: 1px #38a169d7;
+  border: 1px rgba(50, 160, 219, 0.43);
   border-style: dashed;
   border-radius: 50%;
   transition: all 250ms;
@@ -79,4 +79,20 @@ body::-webkit-scrollbar-thumb {
   to {
     transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+input.dark-form:-webkit-autofill,
+input.dark-form:-webkit-autofill:hover,
+input.dark-form:-webkit-autofill:focus,
+input.dark-form:-webkit-autofill,
+textarea.dark-form:-webkit-autofill,
+input.dark-form:-webkit-autofill:hover,
+input.dark-form:-webkit-autofill:focus,
+input.dark-form:-webkit-autofill,
+input.dark-form:-webkit-autofill:hover,
+input.dark-form:-webkit-autofill:focus {
+
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

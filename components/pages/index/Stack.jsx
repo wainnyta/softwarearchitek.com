@@ -1,5 +1,5 @@
 import ToolCard from "../../ToolCard";
-import { Heading, SlideFade, Grid } from "@chakra-ui/react";
+import {Heading, SlideFade, Grid, Wrap, Flex} from "@chakra-ui/react";
 import {
   FaNodeJs,
   FaReact,
@@ -10,12 +10,14 @@ import {
 } from "react-icons/fa";
 
 import Paragraph from "../../Paragraph";
+import {getToolLinkByName, TOOL_LINK_NAMES} from "../../ToolLink";
 
 const tools = [
   {
     name: "Node.js",
     description: "Chrome's V8 JavaScript engine for server-side javascript.",
     icon: <FaNodeJs fontSize="20px" />,
+    stackImage:  getToolLinkByName(TOOL_LINK_NAMES.NODEJS),
     url: "https://www.nodejs.org",
   },
   {
@@ -51,29 +53,46 @@ const tools = [
   },
 ];
 
+const toolLinks = [
+  (TOOL_LINK_NAMES.NODEJS),
+  (TOOL_LINK_NAMES.REACTJS),
+  (TOOL_LINK_NAMES.FLUTTER),
+  (TOOL_LINK_NAMES.JAVASCRIPT),
+  (TOOL_LINK_NAMES.JQUERY),
+  (TOOL_LINK_NAMES.BOOTSTRAP),
+  (TOOL_LINK_NAMES.PHP),
+  (TOOL_LINK_NAMES.NEXTJS),
+  (TOOL_LINK_NAMES.CHAKRA_UI),
+  (TOOL_LINK_NAMES.AWS),
+  (TOOL_LINK_NAMES.HEROKU),
+];
+
 const Stack = () => {
   return (
     <SlideFade in={true} offsetY={80} delay={0.2}>
-      <Heading
-        as="h1"
-        fontSize={{ base: "24px", md: "30px", lg: "36px" }}
-        mb={3}
-      >
-        Primary Stack & Technologies
-      </Heading>
+      {/*<Heading*/}
+      {/*  as="h1"*/}
+      {/*  fontSize={{ base: "24px", md: "30px", lg: "36px" }}*/}
+      {/*  mb={3}*/}
+      {/*>*/}
+      {/*  Primary Stack & Technologies*/}
+      {/*</Heading>*/}
       <Paragraph fontSize="xl" lineHeight={1.6}>
-        As a full-stack web developer there are alot of tools you use in your
-        daily bases, these are primary tools that i use & like.
+        As a full stack developer, I love to continuously learn and adopt new technologies.
+        Here are some of the languages I speak, and tools and technologies that I mainly use
+         (or have experienced).
       </Paragraph>
-      <Grid
+      <Wrap
         mt={10}
-        templateColumns={["1fr", "1fr", "repeat(2, 1fr)", "repeat(3, 1fr)"]}
-        gap={5}
+        spacing={"10px"}
+        w={"100%"}
+        justify={"space-between"}
       >
-        {tools.map((tool) => (
-          <ToolCard tool={tool} key={tool?.name} />
-        ))}
-      </Grid>
+        {/*{tools.map((tool) => (*/}
+        {/*  <ToolCard tool={tool} key={tool?.name} />*/}
+        {/*))}*/}
+        {toolLinks.map((item) => getToolLinkByName(item))}
+      </Wrap>
     </SlideFade>
   );
 };

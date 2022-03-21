@@ -1,52 +1,182 @@
-import Head from "next/head";
 import {
+  Avatar,
   Box,
-  Container,
-  Heading,
-  SlideFade,
-  Divider,
   Button,
   Collapse,
-  LightMode,
+  Container,
+  Divider,
+  Flex,
+  Heading, HStack, IconButton, Image,
+  LightMode, Link,
+  SlideFade,
   Tag,
+  Text, useColorModeValue, VStack, Wrap, WrapItem
 } from "@chakra-ui/react";
-import Paragraph from "components/Paragraph";
-import { useState } from "react";
+import Head from "next/head";
+import Paragraph from "../components/Paragraph";
+import {useState} from "react";
+import Timeline from "../components/pages/index/Timeline";
+import {FaCertificate, FaExternalLinkAlt, FaGithub, FaGraduationCap, FaListAlt, FaSuitcase} from "react-icons/fa";
+import {FcGraduationCap} from "react-icons/fc";
 
-const About = () => {
+const careerItems = [
+  {
+    logo: "/companies/juvonno-logo.jpeg",
+    companyURL: "https://juvonno.com",
+    companyName: "Juvonno",
+    title: "Lead Software Developer",
+    when: "June 2018 - Present",
+    skills: ["PHP", "MySQL", "Javascript", "JQuery", "CSS", "Less", "C#", "NodeJS", "ExpressJS", "WebSocket", "Socket Programming", "Windows Service", "POS Device Integration"]
+  },
+  {
+    logo: "/companies/comit.jpeg",
+    companyURL: "https://www.comit.org/",
+    githubURL: "https://github.com/wainnyta/comit",
+    companyName: "COMIT CORP",
+    title: "Java Instructor",
+    when: "June 2018 - Sep 2018",
+    skills: ["Java", "MySQL", "HTML5", "CSS", "Javascript", "JSP", "Dropwizard"],
+  },
+  {
+    logo: "/companies/varian.jpeg",
+    companyURL: "https://www.varian.com/",
+    companyName: "Varian",
+    title: "Software Developer / DevOps",
+    when: "Jan 2018 - June 2018",
+    skills: ["Java", "Dropwizard", "Python", "Kubernetes", "AngularJS", "Windows Server", "Google Guice", "Maven", "Mockito", "JUnit"]
+  },
+  {
+    logo: "/companies/priceline.png",
+    companyURL: "https://pricelinepartnernetwork.com/",
+    companyName: "Priceline Partner Network",
+    title: "API Developer",
+    when: "Oct 2017 - Jan 2018",
+    bgColor: "white",
+    skills: ["PHP", "HTML5", "CSS", "Javascript", "ReactJS", "Redis", "MySQL", "Docker"],
+  },
+  {
+    logo: "/companies/lotlinx.jpeg",
+    companyURL: "https://www.lotlinx.com/",
+    companyName: "LotLinx",
+    title: "Software Developer",
+    when: "Sep 2015 - Sep 2017",
+    skills: ["PHP", "Java", "Maven", "Netty Framework", "Jenkin", "HTML5", "CSS", "Javascript", "MySQL"]
+  },
+  {
+    logo: "/companies/uom.jpeg",
+    companyURL: "https://umanitoba.ca/",
+    companyName: "University of Manitoba",
+    title: "Computer Science Teaching Assistant",
+    when: "Sep 2012 - Dec 2014",
+    skills: ["Java", "C", "C++", "Linux", "Unix", "Socket Programming", "Object Oriented Programming", "Assembly Language"]
+  }
+];
+
+const educationItems = [
+  {
+    logo: "/companies/circuitstream.jpeg",
+    companyURL: "https://umanitoba.ca/",
+    companyName: "Circuit Stream",
+    title: "Certificate, XR Development with Unity",
+    when: "2020",
+    skills: ["Unity", "C#", "Game Programming", "Virtual Reality", "Augmented Reality", "Mixed Reality"]
+  },
+  {
+    logo: "/companies/uom.jpeg",
+    companyURL: "https://umanitoba.ca/",
+    companyName: "University of Manitoba",
+    title: "Bachelor's Degree, Computer Science",
+    when: "2008 - 2014",
+    skills: ["Java", "C", "C++", "Linux", "Unix", "Socket Programming", "Object Oriented Programming", "Assembly Language"]
+  },
+];
+
+
+
+const TimelineItem = ({logo, companyURL, githubURL, companyName, when, title, skills, bgColor}) => {
+  return <Flex
+    bg={useColorModeValue("white", "#1A212D")}
+    py={10}
+    p={4}
+    my={6}
+    shadow='md'
+    borderWidth='1px'
+    borderRadius={10}
+    borderColor={useColorModeValue("gray.200", "gray.700")}
+  >
+    <Image src={logo} objectFit={"contain"} boxSize={"65px"} borderRadius={"50%"} bgColor={bgColor || "transparent"} />
+    <Flex direction={"column"} w={"100%"}  pl={4}>
+      <Flex
+        alignItems={{base: "start", md: "center"}}
+        w={"100%"}
+        justifyContent={"space-between"}
+        direction={{base: "column", md: "row"}}
+      >
+        <HStack alignItems={"center"}>
+          <Heading fontSize={"2xl"} pr={0}>
+            <Link target={"_blank"} href={companyURL}>{companyName}</Link>
+          </Heading>
+         {/*<Link href={companyURL}>*/}
+         {/*  <FaExternalLinkAlt href={companyURL} />*/}
+         {/*</Link>*/}
+
+          {githubURL &&
+            <Link px={2} _hover={{borderBottom: "1px", paddingBottom: "4px"}} as={"a"} aria-label={"Project Github URL"} href={githubURL}>
+              <FaGithub size={"22px"} href={githubURL} />
+            </Link>
+          }
+        </HStack>
+        <Text color={useColorModeValue("gray.600", "gray.300")} display={{base: "none", md: "block"}}>{when}</Text>
+      </Flex>
+      <Text pt={{base: 0, md: 1}} fontSize={"1.0rem"} fontWeight={"900"}>{title}</Text>
+      <Text color={useColorModeValue("gray.600", "gray.300")} pt={1} display={{base: "block", md: "none"}}>{when}</Text>
+      <Wrap pt={4}>
+        {skills?.map(skill => <Tag>{skill}</Tag>)}
+      </Wrap>
+    </Flex>
+  </Flex>
+}
+
+const TimelineList = ({listTitle, listItems, listIcon}) => {
+  return <SlideFade in={true} offsetY={80}>
+    <Flex alignItems={"baseline"} mb={4}>
+      <Heading
+        as="h1"
+        fontSize={{ base: "28px", md: "32px", lg: "36px" }}
+        //borderBottom={"1px"}
+      >
+        {listTitle}
+      </Heading>
+      <Text pl={4}>
+        {listIcon}
+      </Text>
+    </Flex>
+
+    {listItems?.map(item =>
+      <TimelineItem
+        logo={item.logo}
+        companyName={item.companyName}
+        companyURL={item.companyURL}
+        githubURL={item.githubURL}
+        title={item.title}
+        when={item.when}
+        skills={item.skills}
+        bgColor={item.bgColor}
+      />
+    )}
+  </SlideFade>
+}
+
+const TimelinePage = () => {
   const [show, setShow] = useState(false);
-
-  const [coolStuff, setCoolStuff] = useState([
-    "React",
-    "Javascript",
-    "Science",
-    "Illustration",
-    "AI",
-    "Space",
-    "Android",
-    "Movies",
-    "Comics",
-    "Figma",
-    "Tea",
-  ]);
-  const [notCoolStuff, setNotCoolStuff] = useState([
-    "Angular",
-    "Jquery",
-    "Coffee",
-    "Politics",
-    "Narrow-minded",
-    "Working Overtime",
-  ]);
-
-  const handleToggle = () => setShow(!show);
 
   return (
     <div>
       <Head>
-        <title>Meer Bahadin | About</title>
+        <title>Ancaster Development | About</title>
         <meta
           name="description"
-          content="Meer Bahadin | Full stack developer - UI / UX Designer"
+          content="Ancaster Development | Full stack developer - UI / UX Designer"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://meera.dev/" />
@@ -57,94 +187,25 @@ const About = () => {
         <meta property="og:image" content="/meta-image.jpg" />
       </Head>
       <main>
-        <Container maxW="container.lg" mt={10}>
-          <SlideFade in={true} offsetY={80}>
-            <Box>
-              <Heading
-                as="h1"
-                fontSize={{ base: "28px", md: "32px", lg: "36px" }}
-                mb={4}
-              >
-                About Me
-              </Heading>
-              <Collapse in={show} startingHeight={100}>
-                <Paragraph fontSize="xl" lineHeight={1.6}>
-                  I started using a computer when I was 7 years old, I was
-                  obsessed with gaming! But while I was only doing games, I
-                  developed interests in software, I began to ask myself about
-                  those programs on my desktop, I have never checked them I was
-                  always going for the game icons. The day I started to use
-                  photoshop everything changed, I loved it and I developed an
-                  interest in graphic design, I thought that I will be doing
-                  that for the rest of my life, but thought changed when I got
-                  to college, I started programming, it wasn't fun at first, I
-                  already knew HTML & CSS and some JS but that wasn't helping me
-                  understanding C# & C++, I didn't like building apps for
-                  windows using WinForm so I started work on my web skills and I
-                  picked Node.js & React and never looked back.
-                </Paragraph>
-              </Collapse>
-              <LightMode>
-                <Button
-                  size="sm"
-                  onClick={handleToggle}
-                  mt="1rem"
-                  colorScheme="green"
-                  bg="green.500"
-                >
-                  Show {show ? "Less" : "More"}
-                </Button>
-              </LightMode>
-            </Box>
-            <Divider my={10} />
-          </SlideFade>
-          <SlideFade in={true} offsetY={80} delay={0.2}>
-            <Heading
-              as="h1"
-              fontSize={{ base: "24px", md: "30px", lg: "36px" }}
-              mb={3}
-            >
-              Cool Stuff
-            </Heading>
-            <Paragraph fontSize="xl" lineHeight={1.6}>
-              {coolStuff.map((item) => (
-                <Tag
-                  size="lg"
-                  colorScheme="green"
-                  key={item}
-                  marginY={2}
-                  marginRight={2}
-                >
-                  {item}
-                </Tag>
-              ))}
-            </Paragraph>
-            <Heading
-              as="h1"
-              fontSize={{ base: "24px", md: "30px", lg: "36px" }}
-              mt={10}
-              mb={3}
-            >
-              Meh..
-            </Heading>
-            <Paragraph fontSize="xl" lineHeight={1.6}>
-              {notCoolStuff.map((item) => (
-                <Tag
-                  size="lg"
-                  colorScheme="red"
-                  key={item}
-                  marginY={2}
-                  marginRight={2}
-                >
-                  {item}
-                </Tag>
-              ))}
-            </Paragraph>
-          </SlideFade>
+        <Container maxW="container.lg" mt={12} px={{base: 6, xl: 2, lg: 4}}>
+          <TimelineList
+            listTitle={"Career"}
+            listIcon={<FaSuitcase size={25} />}
+            listItems={careerItems}
+          />
+
+          <Box pt={"60px"}>
+            <TimelineList
+              listTitle={"Education"}
+              listIcon={<FaGraduationCap size={30} />}
+              listItems={educationItems}
+            />
+          </Box>
+
         </Container>
       </main>
     </div>
   );
-};
+}
 
-export default About;
+export default TimelinePage;

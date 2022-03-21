@@ -5,73 +5,129 @@ import {
   Link,
   LightMode,
   Button,
-  ButtonGroup,
+  ButtonGroup, Flex, Image, IconButton, useColorMode, useColorModeValue, Text, VStack,
 } from "@chakra-ui/react";
 
-import { FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaExternalLinkAlt,
+  FaExternalLinkSquareAlt, FaGithub, FaJava,
+  FaLinkedin,
+  FaLinkedinIn,
+  FaWhatsapp
+} from "react-icons/fa";
 import Paragraph from "../../Paragraph";
+import ModalContact from "../ModalContact";
 
-const Profile = () => {
+const Profile = ({isOpen, onOpen, onClose}) => {
   return (
     <SlideFade in={true} offsetY={80}>
-      <Box>
-        <Heading
-          as="h1"
-          fontSize={{ base: "28px", md: "40px", lg: "48px" }}
-          mb={3}
-        >
-          Hey , I’m Meer Bahadin
-        </Heading>
-        <Paragraph fontSize="2xl" lineHeight={1.6}>
-          Full stack developer - UI / UX Designer, focused on Javascript,{" "}
-          <Link
-            color="green.500"
-            href="https://www.nodejs.org"
-            isExternal
-            fontWeight="500"
+      <Flex direction={{base: 'column', md: 'row'}}>
+        <Image
+          src={"wainnyavacircle.png"}
+          boxSize={250}
+          alignSelf={"center"}
+          mt={{base: 6, md: 0}}
+        />
+        <Box pl={{base: 0, md: 6}}>
+          <Heading
+            as="h1"
+            fontSize={{ base: "28px", md: "40px", lg: "48px" }}
+            mb={3}
+            mt={{base: "3.5rem", md: 0}}
           >
-            Nodejs,
-          </Link>{" "}
-          <Link
-            color="green.500"
-            href="https://www.reactjs.org"
-            fontWeight="500"
-            isExternal
-          >
-            React
-          </Link>
-          . I work as a full stack developer. You’ve found my personal website
-          on the internet.
-        </Paragraph>
-        <Box mt={10}>
-          <LightMode>
-            <ButtonGroup>
-              <Button
-                colorScheme="green"
-                bg="green.500"
-                href="mailto:info@meera.dev"
-                borderRadius={5}
-                p={3}
-                as="a"
-                leftIcon={<FaEnvelope />}
-              >
-                info@meera.dev
-              </Button>
-              <Button
-                colorScheme="green"
-                bg="green.500"
-                href=" https://wa.me/+9647501315441"
-                borderRadius={5}
-                p={3}
-                as="a"
-                leftIcon={<FaWhatsapp />}
-              >
-                WhatsApp
-              </Button>
-            </ButtonGroup>
-          </LightMode>
+            Hi there 👋 I’m Wainny
+          </Heading>
+          <Paragraph fontSize="2xl" lineHeight={1.6}>
+            I am an experienced Full-Stack Software Craftsman, always eager to learn and improvise.
+            I love the process of brainstorming ideas and bringing to life digital products.
+            I am passionate with what I'm doing and I'm always thriving towards the best of my abilities.
+            <Text pt={2} color={useColorModeValue("gray.900", "white")}>Currently I'm open and looking for new and exciting projects!</Text>
+            {/*To me, building a Digital Solution is very much alike to that of building a Physical House.*/}
+            {/*It is a piece of art crafted scientifically!*/}
+          </Paragraph>
+          <Box mt={6}>
+            <>
+              <VStack w={"100%"} display={{base: "flex", md: "none"}}>
+                <Button
+                  _hover={{
+                    fontSize: "1.2rem",
+                    paddingLeft: 6,
+                    paddingRight: 6,
+                  }}
+                  //href="mailto:wainnyta@gmail.com"
+                  borderRadius={5}
+                  p={5}
+                  as="a"
+                  leftIcon={<FaEnvelope />}
+                  onClick={onOpen}
+                  cursor={"pointer"}
+                  isFullWidth={true}
+                >
+                  Get In Touch
+                </Button>
+                <Button
+                  variant={"outline"}
+                  isFullWidth={true}
+                  colorScheme={"gray"}
+                  as="a"
+                  href="https://www.linkedin.com/in/wainny-ta-a5715359/"
+                  aria-label="Linkedin"
+                  leftIcon={<FaLinkedin fontSize="20px" />}
+                  _target={"blank"}
+                >LinkedIn</Button>
+                <Button
+                  variant={"outline"}
+                  isFullWidth={true}
+                  colorScheme={"gray"}
+                  as="a"
+                  href="https://github.com/wainnyta"
+                  aria-label="Github"
+                  isFullWidth={true}
+                  leftIcon={<FaGithub fontSize="20px" />}
+                >Github</Button>
+              </VStack>
+
+              <ButtonGroup w={"100%"} display={{base: "none", md: "flex"}}>
+                <Button
+                  _hover={{
+                    fontSize: "1.2rem",
+                    paddingLeft: 6,
+                    paddingRight: 6,
+                  }}
+                  //href="mailto:wainnyta@gmail.com"
+                  borderRadius={5}
+                  p={5}
+                  as="a"
+                  leftIcon={<FaEnvelope />}
+                  onClick={onOpen}
+                  cursor={"pointer"}
+                >
+                  Get In Touch
+                </Button>
+                <IconButton
+                  variant={"ghost"}
+                  colorScheme={"gray"}
+                  as="a"
+                  href="https://www.linkedin.com/in/wainny-ta-a5715359/"
+                  aria-label="Linkedin"
+                  icon={<FaLinkedin fontSize="20px" />}
+                  display={{base: "none", md: "flex"}}
+                />
+                <IconButton
+                  variant={"ghost"}
+                  colorScheme={"gray"}
+                  as="a"
+                  href="https://github.com/wainnyta"
+                  aria-label="Github"
+                  icon={<FaGithub fontSize="20px" />}
+                  display={{base: "none", md: "flex"}}
+                />
+              </ButtonGroup>
+            </>
+          </Box>
         </Box>
-      </Box>
+      </Flex>
     </SlideFade>
   );
 };

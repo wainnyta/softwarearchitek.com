@@ -8,18 +8,6 @@ const Books = ({ books }) => {
   return (
     <div>
       <Head>
-        <title>Books | Meer Bahadin</title>
-        <meta
-          name="description"
-          content="A list of my favorite development books"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://meera.dev/" />
-        <meta
-          property="og:title"
-          content="A list of my favorite development books."
-        />
-        <meta property="og:image" content="/meta-image.jpg" />
       </Head>
       <Container maxW="container.lg" mt={10}>
         <SlideFade in={true} offsetY={80}>
