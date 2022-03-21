@@ -8,7 +8,7 @@ const openGraph = {
     'Software Development Services in Winnipeg, MB, Canada. Website Development, Mobile App Development, API Development, Custom Software Development. Dedicated team for your project.',
   images: [
     {
-      url: 'https://softwarearchitek.com/images/softwarearchitekog.png',
+      url: 'https://softwarearchitek.com/softwarearchitekog.png',
       width: 850,
       height: 650,
       alt: 'Software Architek - Software Development Services in Canada',
