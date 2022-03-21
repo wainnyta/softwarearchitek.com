@@ -22,7 +22,7 @@ import MyProject from "./MyProject";
 
 const myProjectsData = [
   {
-    imageURL: "projects/sh.png",
+    imageURL: "/projects/sh.png",
     title: "Real Estate Portfolio Web App",
     projectURL: "https://symphoniahomes.com",
     desc: "A website that showcases portfolios and projects for our team of Real Estate Investors. " +
@@ -38,7 +38,7 @@ const myProjectsData = [
   },
 
   {
-    imageURL: "projects/metasym.png",
+    imageURL: "/projects/metasym.png",
     title: "UI/UX Design For A Meta Physical Site",
     projectURL: "",
     desc: "I worked with the Client and created a new face for their website. They also wanted to launch a mobile application. The theme here is simple and mystical - in order to reflect the ancient and scientific perspective of this metaphysical study.",
@@ -49,7 +49,7 @@ const myProjectsData = [
   },
 
   {
-    imageURL: "projects/qrbattlelogo3.png",
+    imageURL: "/projects/qrbattlelogo3.png",
     title: "QR Battle - A Fun & Strategic Moving Game",
     projectURL: "",
     desc: "This is a mobile application / game that I'm really looking forward to its completion!" +
@@ -63,7 +63,7 @@ const myProjectsData = [
   },
 
   {
-    imageURL: "projects/ia-chromeextension2.png",
+    imageURL: "/projects/ia-chromeextension2.png",
     title: "Property Assessment & Evaluation Chrome Extension",
     projectURL: "",
     desc: "This Chrome extension allows Investors to quickly look up info about a Property (ex: property's assessed value, lot size, number of rooms, permits pulled, etc.)." +

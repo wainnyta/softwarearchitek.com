@@ -23,11 +23,16 @@ const Profile = ({isOpen, onOpen, onClose}) => {
   return (
     <SlideFade in={true} offsetY={80}>
       <Flex direction={{base: 'column', md: 'row'}}>
-        <Image
-          src={"wainnyavacircle.png"}
-          boxSize={250}
-          alignSelf={"center"}
-          mt={{base: 6, md: 0}}
+        <img
+          alt={"Wainny Avatar"}
+          src={"/wainnyavacircle.png"}
+          style={{
+            marginTop: {base: 6, md: 0},
+            alignSelf: "center",
+            width: "250px",
+            height: "250px",
+          }}
+
         />
         <Box pl={{base: 0, md: 6}}>
           <Heading

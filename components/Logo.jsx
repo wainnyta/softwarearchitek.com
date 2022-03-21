@@ -6,7 +6,7 @@ const Logo = () => {
   const router = useRouter();
   return (
     <Box className="logo" onClick={() => router.push("/")} alignSelf={"start"}>
-      <Image boxSize={"55px"}  src={useColorModeValue("/logo_black.svg", "/logo_white.svg")} />
+      <img width={"59px"} height={"59px"}  src={useColorModeValue("/logo_black.svg", "/logo_white.svg")} />
     </Box>
   );
 };

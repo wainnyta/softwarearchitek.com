@@ -1,7 +1,6 @@
 import {Badge, Box, Flex, Heading, HStack, Image, Link, Stack, useColorModeValue, Wrap} from "@chakra-ui/react";
 import Paragraph from "../../Paragraph";
-import {ChakraUILink, getToolLinkByName, JavascriptLink, NextJSLink, ReactJSLink} from "../../ToolLink";
-import BookCard from "../../BookCard";
+import {getToolLinkByName, JavascriptLink, NextJSLink, ReactJSLink} from "../../ToolLink";
 import {useState} from "react";
 import Lightbox from "react-image-lightbox";
 
@@ -49,26 +48,46 @@ const MyProject = ({imageURL, imagePercent, imageFit, title, projectURL, desc, s
         borderColor: useColorModeValue("linkedin.100")
       }}
     >
-      <Image src={imageURL}
-             w={{base: "100%", md: imagePercent || "50%"}}
-             opacity={{base: "100%", md: "70%"}}
-             objectFit={imageFit || "cover"}
-             borderRadius={6}
-             _hover={{
-               opacity: '100%',
-               cursor: 'pointer',
-               shadow: 'lg',
-               border: 'md',
-               borderColor: "black"
-             }}
-             onClick={() => {
-               setCurrentImage(imageURL);
-               setIsLightBoxOpen(true);
-             }}
-        // border={"1px"} borderColor={"gray.200"} borderRadius={10}
-      />
+      <Flex
+        justify={"center"}
+        align={"center"}
+        overflow={"hidden"}
+        flex={4}
+        opacity={{base: "100%", md: "70%"}}
+        className="project-images-wrapper"
+        _hover={{
+          opacity: "100%",
+          shadow: 'xl',
+          border: 'md',
+          borderColor: "black"
+        }}
+      >
+        <img
+          className="project-images"
+          src={imageURL}
+          onClick={() => {
+            setCurrentImage(imageURL);
+            setIsLightBoxOpen(true);
+          }}
+          // border={"1px"} borderColor={"gray.200"} borderRadius={10}
+        />
+      </Flex>
 
-      <Stack spacing={8} pl={{base: 0, md: 6}} pt={{base: 8, md: 0}} justifyContent={"space-between"}>
+      <style jsx>{`
+        .project-images:hover {
+          cursor: pointer;
+          opacity: 100% !important;
+        }
+        .project-images {
+          flex-shrink: 0;
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+          border-radius: 6px;
+        }
+      `}</style>
+
+      <Stack spacing={8} pl={{base: 0, md: 6}} pt={{base: 8, md: 0}} justifyContent={"space-between"} flex={6}>
         <Feature
           status={status}
           title={title}

@@ -104,7 +104,7 @@ const TimelineItem = ({logo, companyURL, githubURL, companyName, when, title, sk
     borderRadius={10}
     borderColor={useColorModeValue("gray.200", "gray.700")}
   >
-    <Image src={logo} objectFit={"contain"} boxSize={"65px"} borderRadius={"50%"} bgColor={bgColor || "transparent"} />
+    <img src={logo} style={{objectFit: "contain", background: bgColor || "transparent", borderRadius: "50%", width: "65px", height: "65px"}} />
     <Flex direction={"column"} w={"100%"}  pl={4}>
       <Flex
         alignItems={{base: "start", md: "center"}}
