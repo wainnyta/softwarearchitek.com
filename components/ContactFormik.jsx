@@ -120,7 +120,7 @@ const ContactFormik = ({initialValues, setInitialValues, isModal}) => {
           as={"h1"}
         >Let's get in touch!
         </Heading>
-        <Paragraph fontSize={'xl'} lineHeight={1.6} mt={2} pb={{base: 0, md: 4}}>
+        <Paragraph fontSize={{base: 'xl', lg: '2xl'}} lineHeight={1.6} mt={2} pb={{base: 0, md: 4}}>
           If you need help with anything, or maybe you just want to say hello, feel please to use the form
           below to get in touch with me anytime. I will get back to you within 24 hours!
         </Paragraph>

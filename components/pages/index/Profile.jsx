@@ -23,23 +23,32 @@ const Profile = ({isOpen, onOpen, onClose}) => {
   return (
     <SlideFade in={true} offsetY={80}>
       <Flex direction={{base: 'column', md: 'row'}}>
-        <img
-          alt={"Wainny Avatar"}
-          src={"/wainnyavacircle.png"}
-          style={{
-            marginTop: {base: 6, md: 0},
-            alignSelf: "center",
-            width: "250px",
-            height: "250px",
-          }}
+        <Flex
+          alignSelf={"center"}
+          justify={"center"}
+          my={{base: 6, md: 0}}
+          width="100%"
+          height="100%"
+          minW={"250px"}
+        >
+          <img
+            alt={"Wainny Avatar"}
+            src={"/wainnyavacircle.png"}
+            style={{
+              alignSelf: "center",
+              width: "250px",
+              height: "250px",
+            }}
 
-        />
+          />
+        </Flex>
+
         <Box pl={{base: 0, md: 6}}>
           <Heading
             as="h1"
             fontSize={{ base: "28px", md: "40px", lg: "48px" }}
             mb={3}
-            mt={{base: "3.5rem", md: 0}}
+            mt={{base: 2, md: 0}}
           >
             Hi there 👋 I’m Wainny
           </Heading>
