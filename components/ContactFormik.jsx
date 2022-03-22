@@ -39,8 +39,8 @@ const projectTypeList = [
 ];
 
 const budgetList = [
-  "Under $500",
-  "$500 - $1,000",
+  "Under $300",
+  "$300 - $1,000",
   "$1,000 - $5,000",
   "$5,000 - $15,000",
   "$15,000+"
@@ -89,13 +89,13 @@ const ContactFormik = ({initialValues, setInitialValues, isModal}) => {
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID
       ).then(
         ({status, text}) => {
-          console.log("Text = ", text);
           if(status === 200){
             setFormMessage(
               'Thank you for your message! I will get back to you within 24 hours.'
             );
             setHasError(false);
             actions.setSubmitting(false);
+            actions.resetForm();
             scrollToTop();
           }else{
             handleError(text, actions);
@@ -245,7 +245,7 @@ const ContactFormik = ({initialValues, setInitialValues, isModal}) => {
                       <Field name="budget">
                         {({field, form}) => (
                           <FormControl name={"budget"} id={"budget"}>
-                            <FormLabel htmlFor='budget' color={useColorModeValue("gray.800", "gray.400")}>Budget</FormLabel>
+                            <FormLabel htmlFor='budget' color={useColorModeValue("gray.800", "gray.400")}>Budget (CAD)</FormLabel>
                             <Select
                               {...field}
                               bgColor={useColorModeValue("white", "gray.800")}

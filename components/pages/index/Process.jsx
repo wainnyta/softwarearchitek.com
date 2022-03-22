@@ -80,7 +80,6 @@ const Process = ({isOpen, onOpen, onClose}) => {
         //gridGap={"12px"}
       >
         {steps.map((step, index) =>{
-          console.log("index="+index);
           return <StepItem
             key={index}
             icon={step.icon}

@@ -157,7 +157,10 @@ const Services = ({isOpen, onOpen, onClose, setInitialValues, initialValues}) =>
       <Text
         as={"span"}
         color={useColorModeValue("gray.900", "white")}>
-        <Link fontWeight={"bold"} onClick={
+        <Link
+          fontWeight={"bold"}
+          color={useColorModeValue("blue.500", "blue.200")}
+          onClick={
           () => openModal({
               initialProject: ProjectTypes.MVP_DEVELOPMENT,
               setInitialValues,
@@ -166,7 +169,7 @@ const Services = ({isOpen, onOpen, onClose, setInitialValues, initialValues}) =>
             }
           )}
         >
-          Let's connect and have a chat 😊
+          Let's connect and have a chat. 😊
         </Link>
       </Text>
     </Paragraph>
