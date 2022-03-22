@@ -4,7 +4,7 @@ const Paragraph = ({ children, ...props }) => {
   const textColor = useColorModeValue("gray.600", "gray.300");
 
   return (
-    <Text color={textColor} {...props}>
+    <Text color={textColor} fontSize={{base: 'lg', md: 'xl'}} {...props}>
       {children}
     </Text>
   );

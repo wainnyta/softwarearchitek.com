@@ -25,7 +25,7 @@ const serviceList = [
     initialProject: ProjectTypes.WEB_DEVELOPMENT,
     title: "Web Development",
     description:
-      <Paragraph>
+      <Paragraph fontSize={{base: "1.1rem", md: "1.1rem"}}>
         I'll create web solutions from scratch, or scale up your existing applications.
         Our web app will always be fully responsive on desktop, tablet and mobile devices.
       </Paragraph>
@@ -40,7 +40,7 @@ const serviceList = [
     icon: <FaMobileAlt size={50} color={"#45A8DAFF"} />,
     initialProject: ProjectTypes.MOBILE_DEVELOPMENT,
     title: "Mobile Development",
-    description: <Paragraph>
+    description: <Paragraph fontSize={{base: "1.1rem", md: "1.1rem"}}>
       I'll build mobile applications for both iOS and Android using modern technologies.
       I have experiences working with Flutter, React Native, and Swift.
     </Paragraph>
@@ -55,7 +55,7 @@ const serviceList = [
     icon: <HiOutlineCode size={50} color={"#45A8DAFF"} />,
     initialProject: ProjectTypes.CUSTOM_DEVELOPMENT,
     title: "Custom Development",
-    description: <Paragraph>
+    description: <Paragraph fontSize={{base: "1.1rem", md: "1.1rem"}}>
       Whether it is architecture design, API integration, or to "digitialize" your business,
       I'll work with you to find solutions that are tailored to your business requirements.
     </Paragraph>,
@@ -78,7 +78,7 @@ const Service2 = ({index, icon, title, description, image, list, onOpen, initial
     // }}
     bg={useColorModeValue("white", "#1a222d")}
     py={10}
-    p={8}
+    p={{base: 6, md: 8}}
     shadow='md'
     borderWidth={"1px"}
     borderRadius={10}
@@ -149,7 +149,7 @@ const Services = ({isOpen, onOpen, onClose, setInitialValues, initialValues}) =>
     >
       Work With Me
     </Heading>
-    <Paragraph fontSize="xl" lineHeight={1.6} mb={50}>
+    <Paragraph lineHeight={1.6} mb={50} fontSize={"xl"}>
       I specialize in helping you turn the idea in mind into an MVP that can be launched in a competitive period
       of time. Whether you are at the ideation stage, or maybe you're only looking for help with some specific development,
       or perhaps you're seeking for a technical partner, I'd love to hear more about your vision!&nbsp;

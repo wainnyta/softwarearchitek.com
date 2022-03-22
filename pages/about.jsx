@@ -104,7 +104,7 @@ const TimelineItem = ({logo, companyURL, githubURL, companyName, when, title, sk
     borderRadius={10}
     borderColor={useColorModeValue("gray.200", "gray.700")}
   >
-    <img src={logo} style={{objectFit: "contain", background: bgColor || "transparent", borderRadius: "50%", width: "65px", height: "65px"}} />
+    <img alt={companyName} src={logo} style={{objectFit: "contain", background: bgColor || "transparent", borderRadius: "50%", width: "59px", height: "59px"}} />
     <Flex direction={"column"} w={"100%"}  pl={4}>
       <Flex
         alignItems={{base: "start", md: "center"}}
@@ -114,7 +114,7 @@ const TimelineItem = ({logo, companyURL, githubURL, companyName, when, title, sk
       >
         <HStack alignItems={"center"}>
           <Heading fontSize={"2xl"} pr={0}>
-            <Link target={"_blank"} href={companyURL}>{companyName}</Link>
+            <Link isExternal={true} href={companyURL}>{companyName}</Link>
           </Heading>
          {/*<Link href={companyURL}>*/}
          {/*  <FaExternalLinkAlt href={companyURL} />*/}
@@ -128,7 +128,7 @@ const TimelineItem = ({logo, companyURL, githubURL, companyName, when, title, sk
         </HStack>
         <Text color={useColorModeValue("gray.600", "gray.300")} display={{base: "none", md: "block"}}>{when}</Text>
       </Flex>
-      <Text pt={{base: 0, md: 1}} fontSize={"1.0rem"} fontWeight={"900"}>{title}</Text>
+      <Text pt={{base: 0, md: 1}} fontSize={"1.1rem"} fontWeight={"900"}>{title}</Text>
       <Text color={useColorModeValue("gray.600", "gray.300")} pt={1} display={{base: "block", md: "none"}}>{when}</Text>
       <Wrap pt={4}>
         {skills?.map(skill => <Tag>{skill}</Tag>)}

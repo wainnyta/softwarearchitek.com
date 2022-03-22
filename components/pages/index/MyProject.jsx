@@ -21,7 +21,7 @@ function Feature({ title, desc, link, status, ...rest }) {
           <Badge h={6} pt={1} px={2} ml={{base: 2, md: 6}} colorScheme={"blue"} >{status}</Badge>)}
       </Flex>
       <Link color={useColorModeValue("linkedin.600", "linkedin.300")} href={link}>{link}</Link>
-      <Paragraph fontSize='1rem' lineHeight={1.6} mt={4}>{desc}</Paragraph>
+      <Paragraph fontSize={{base: '1.1rem', md: '1.1rem'}} lineHeight={1.6} mt={4}>{desc}</Paragraph>
     </Box>
   )
 }
