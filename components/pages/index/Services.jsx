@@ -172,7 +172,7 @@ const Services = ({isOpen, onOpen, onClose, setInitialValues, initialValues}) =>
     </Paragraph>
     <Flex
       direction={{base: "column", lg: "row"}}
-      gridGap={2}
+      gridGap={4}
     >
       {serviceList?.map((serviceItem, index) => {
         return <Service2
