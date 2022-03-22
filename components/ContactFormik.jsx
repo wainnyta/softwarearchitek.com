@@ -116,7 +116,7 @@ const ContactFormik = ({initialValues, setInitialValues, isModal}) => {
         <div id="topRef" ref={topRef}></div>
         <Heading
           fontSize={{base: "28px", md: "40px", lg: "48px"}}
-          mt={10}
+          mt={isModal? 2 : 10}
           as={"h1"}
         >Let's get in touch!
         </Heading>
