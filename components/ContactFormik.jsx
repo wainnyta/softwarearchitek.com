@@ -223,6 +223,7 @@ const ContactFormik = ({initialValues, setInitialValues, isModal}) => {
                             <FormLabel htmlFor='topic' color={useColorModeValue("gray.800", "gray.400")}>I want to talk
                               about</FormLabel>
                             <Select
+                              {...field}
                               bgColor={useColorModeValue("white", "gray.800")}
                               id='topic'
                               placeholder=''
@@ -230,10 +231,9 @@ const ContactFormik = ({initialValues, setInitialValues, isModal}) => {
                                 color: useColorModeValue("gray.800", "gray.500")
                               }}
                               onChange={form.handleChange}
-                              value={initialValues.topic}
                             >
                               {projectTypeList.map((projectType, index) => {
-                                return <option value={projectType} key={projectType} id={"topic"}>{projectType}</option>;
+                                return <option value={projectType} key={index} id={"topic"}>{projectType}</option>;
                               })}
                             </Select>
                             <FormErrorMessage>{form.errors.topic}</FormErrorMessage>
@@ -247,6 +247,7 @@ const ContactFormik = ({initialValues, setInitialValues, isModal}) => {
                           <FormControl name={"budget"} id={"budget"}>
                             <FormLabel htmlFor='budget' color={useColorModeValue("gray.800", "gray.400")}>Budget</FormLabel>
                             <Select
+                              {...field}
                               bgColor={useColorModeValue("white", "gray.800")}
                               id='budget'
                               placeholder=''
