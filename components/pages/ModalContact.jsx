@@ -29,7 +29,7 @@ const ModalContact = ({onClose, isOpen, onOpen, initialValues, setInitialValues}
             overflowY: 'auto',
           }}
         >
-          <Container maxW="container.lg" px={{base: 6, md: 0}}>
+          <Container maxW="container.lg" px={{base: 6, md: 0}} pb={20}>
             <Box
               position={"-webkit-sticky"}
               position={"sticky"}
