@@ -24,9 +24,8 @@ const Contact = () => {
   return (
     <div>
       <main>
-        <Container maxW="container.lg" px={{base: 6, xl: 2, lg: 4}}>
-          <ContactFormik initialValues={initialValues} />
-        </Container>
+          <ContactFormik initialValues={initialValues} isModal={false} />
+
       </main>
     </div>
   );
