@@ -11,6 +11,8 @@ import {
 } from "@chakra-ui/react";
 import Paragraph from "../components/Paragraph";
 import {ContactFormik} from "../components/ContactFormik";
+import defaultConfig from "../components/AppSEO";
+import {NextSeo} from "next-seo";
 
 const Contact = () => {
   const initialValues = {
@@ -22,11 +24,16 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <main>
+    <>
+      <NextSeo
+        title={"Contact | " + defaultConfig.title}
+      />
+      <div>
+        <main>
           <ContactFormik initialValues={initialValues} isModal={false} />
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 }
 

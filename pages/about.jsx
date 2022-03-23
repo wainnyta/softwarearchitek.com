@@ -18,6 +18,8 @@ import {useState} from "react";
 import Timeline from "../components/pages/index/Timeline";
 import {FaCertificate, FaExternalLinkAlt, FaGithub, FaGraduationCap, FaListAlt, FaSuitcase} from "react-icons/fa";
 import {FcGraduationCap} from "react-icons/fc";
+import {NextSeo} from "next-seo";
+import defaultConfig from "../components/AppSEO";
 
 const careerItems = [
   {
@@ -171,25 +173,30 @@ const TimelinePage = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <div>
-      <main>
-        <Container maxW="container.lg" mt={12} px={{base: 6, xl: 2, lg: 4}}>
-          <TimelineList
-            listTitle={"Career"}
-            listIcon={<FaSuitcase size={25} />}
-            listItems={careerItems}
-          />
-          <Box pt={"60px"}>
+    <>
+      <NextSeo
+        title={"About | " + defaultConfig.title}
+      />
+      <div>
+        <main>
+          <Container maxW="container.lg" mt={12} px={{base: 6, xl: 2, lg: 4}}>
             <TimelineList
-              listTitle={"Education"}
-              listIcon={<FaGraduationCap size={30} />}
-              listItems={educationItems}
+              listTitle={"Career"}
+              listIcon={<FaSuitcase size={25} />}
+              listItems={careerItems}
             />
-          </Box>
+            <Box pt={"60px"}>
+              <TimelineList
+                listTitle={"Education"}
+                listIcon={<FaGraduationCap size={30} />}
+                listItems={educationItems}
+              />
+            </Box>
 
-        </Container>
-      </main>
-    </div>
+          </Container>
+        </main>
+      </div>
+    </>
   );
 }
 
