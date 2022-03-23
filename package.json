@@ -24,6 +24,7 @@
     "react-icons": "^4.3.1",
     "react-image-lightbox": "^5.1.4",
     "react-remove-scroll": "^2.4.4",
+    "react-use-scroll-direction": "^0.1.0",
     "smoothscroll-polyfill": "^0.4.4",
     "styled-jsx": "^5.0.1",
     "yup": "^0.32.11"

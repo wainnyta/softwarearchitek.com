@@ -172,20 +172,6 @@ const TimelinePage = () => {
 
   return (
     <div>
-      <Head>
-        <title>Ancaster Development | About</title>
-        <meta
-          name="description"
-          content="Ancaster Development | Full stack developer - UI / UX Designer"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://meera.dev/" />
-        <meta
-          property="og:title"
-          content="Meer Bahadin | Full stack developer - UI / UX Designer"
-        />
-        <meta property="og:image" content="/meta-image.jpg" />
-      </Head>
       <main>
         <Container maxW="container.lg" mt={12} px={{base: 6, xl: 2, lg: 4}}>
           <TimelineList
@@ -193,7 +179,6 @@ const TimelinePage = () => {
             listIcon={<FaSuitcase size={25} />}
             listItems={careerItems}
           />
-
           <Box pt={"60px"}>
             <TimelineList
               listTitle={"Education"}

@@ -25,7 +25,6 @@ const Contact = () => {
     <div>
       <main>
           <ContactFormik initialValues={initialValues} isModal={false} />
-
       </main>
     </div>
   );

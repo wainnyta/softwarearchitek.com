@@ -31,12 +31,6 @@ const Footer = () => (
       >
         <Logo />
         <ButtonGroup variant="ghost">
-          {/*<IconButton*/}
-          {/*  as="a"*/}
-          {/*  href="https://www.facebook.com/meerbahadin.1"*/}
-          {/*  aria-label="Facebook"*/}
-          {/*  icon={<FaFacebook fontSize="20px" />}*/}
-          {/*/>*/}
           <IconButton
             as={"a"}
             aria-label="Email"
