@@ -15,6 +15,9 @@ export default function Home({initialValues, setInitialValues, isOpen, onOpen, o
 
   return (
     <div>
+      <Head>
+        <meta name="google-site-verification" content="R62rLU3tPfYSxh6S6g_qpL_TRZotg8SV4biE7nXb1FE" />
+      </Head>
       <main>
         <Container maxW="container.lg" mt={["5", "10"]} px={{base: 6, xl: 2, lg: 4}}>
           <Profile isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
