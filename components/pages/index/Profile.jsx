@@ -56,7 +56,7 @@ const Profile = ({isOpen, onOpen, onClose}) => {
             I am an experienced Full-Stack Software Craftsman, always eager to learn and improvise.
             I love the process of brainstorming ideas and bringing to life digital products.
             I am passionate with what I'm doing and I'm always thriving towards the best of my abilities.
-            <Text pt={2} color={useColorModeValue("gray.900", "white")}>Currently I'm open and looking for new and exciting projects!</Text>
+            <Text pt={2} color={useColorModeValue("gray.900", "white")}>Currently I'm open and looking for new and exciting side projects!</Text>
             {/*To me, building a Digital Solution is very much alike to that of building a Physical House.*/}
             {/*It is a piece of art crafted scientifically!*/}
           </Paragraph>
